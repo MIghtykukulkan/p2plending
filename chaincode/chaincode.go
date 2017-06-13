@@ -48,8 +48,13 @@ type AllUsers struct{
 	Userlist []User `json:"userlist"`
 }
 
-type Login struct{
-Token string `json:"token"`
+type SessionAunthentication struct{
+Token  string `json:"token"`
+Email string `json:"email"`
+}
+type Session struct{
+	
+StoreSession []SessionAunthentication `json:"session"`
 }
 type SimpleChaincode struct {
 }
@@ -111,6 +116,9 @@ func (t *SimpleChaincode) Invoke(stub shim.ChaincodeStubInterface, function stri
 	} else if function == "Delete" {
 		return t.Delete(stub, args)
 
+	}else if function == "SaveSession" {
+		return t.SaveSession(stub, args)
+
 	}
 
 	fmt.Println("invoke did not find func: " + function)
@@ -144,6 +152,12 @@ func (t *SimpleChaincode) Query(stub shim.ChaincodeStubInterface, function strin
 	// Handle different functions
 	if function == "readuser" { //read a variable
 		return t.readuser(stub, args)
+	}else if function == "login" {
+		return t.login(stub, args)
+
+	}else if function == "auntheticatetoken" {
+		return t.SetUserForSession(stub, args)
+
 	}
 	fmt.Println("query did not find func: " + function)
 
@@ -155,7 +169,7 @@ func (t *SimpleChaincode) Query(stub shim.ChaincodeStubInterface, function strin
 func (t *SimpleChaincode) readuser(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
 	var name, jsonResp string
 	var err error
-    //var campaign_title,jsonResp string
+    
 	if len(args) != 1 {
 		return nil, errors.New("Incorrect number of arguments. Expecting name of the var to query")
 	}
@@ -174,14 +188,13 @@ func (t *SimpleChaincode) readuser(stub shim.ChaincodeStubInterface, args []stri
 func (t *SimpleChaincode) registerUser(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
 	var err error
 
-	//   0       1       2     3
-	// "lol", "1", "323323", "r@r.com"
+	
 	if len(args) != 8 {
-		return nil, errors.New("Incorrect number of arguments. Expecting 4")
+		return nil, errors.New("Incorrect number of arguments. Expecting 8")
 	}
 
 	//input sanitation
-	fmt.Println("- start init marble")
+	fmt.Println("- start registration")
 	if len(args[0]) <= 0 {
 		return nil, errors.New("1st argument must be a non-empty string")
 	}
@@ -195,13 +208,13 @@ func (t *SimpleChaincode) registerUser(stub shim.ChaincodeStubInterface, args []
 		return nil, errors.New("4th argument must be a non-empty string")
 	}
 	if len(args[4]) <= 0 {
-		return nil, errors.New("1st argument must be a non-empty string")
+		return nil, errors.New("5th argument must be a non-empty string")
 	}
 	if len(args[5]) <= 0 {
-		return nil, errors.New("2nd argument must be a non-empty string")
+		return nil, errors.New("6th argument must be a non-empty string")
 	}
 	if len(args[6]) <= 0 {
-		return nil, errors.New("3rd argument must be a non-empty string")
+		return nil, errors.New("7th argument must be a non-empty string")
 	}
 	user:=User{}
 	user.Name = args[0]
@@ -213,13 +226,13 @@ func (t *SimpleChaincode) registerUser(stub shim.ChaincodeStubInterface, args []
 	user.Pan=args[3]
 	user.Aadhar,err=strconv.Atoi(args[4])
 	if err != nil {
-		return nil, errors.New("Failed to get phone as cannot convert it to int")
+		return nil, errors.New("Failed to get aadhar as cannot convert it to int")
 	}
 	user.UserType=args[5]
 	user.Upi=args[6]
 	user.PassPin, err = strconv.Atoi(args[7])
 	if err != nil {
-		return nil, errors.New("Failed to get phone as cannot convert it to int")
+		return nil, errors.New("Failed to get passpin as cannot convert it to int")
 	}
 	
 	fmt.Println("user",user)
@@ -232,11 +245,11 @@ UserAsBytes, err := stub.GetState("getusers")
 	json.Unmarshal(UserAsBytes, &allusers)										//un stringify it aka JSON.parse()
 	
 	allusers.Userlist = append(allusers.Userlist,user);	
-	fmt.Println("allusers",allusers.Userlist)					//append to open trades
+	fmt.Println("allusers",allusers.Userlist)					//append to allusers
 	fmt.Println("! appended user to allusers")
 	jsonAsBytes, _ := json.Marshal(allusers)
 	fmt.Println("json",jsonAsBytes)
-	err = stub.PutState("getusers", jsonAsBytes)								//rewrite open orders
+	err = stub.PutState("getusers", jsonAsBytes)								//rewrite allusers
 	if err != nil {
 		return nil, err
 	}
@@ -247,14 +260,12 @@ return nil, nil
 func (t *SimpleChaincode) login(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
 	var err error
 
-	//   0       1       2     3
-	// "lol", "1", "323323", "r@r.com"
 	if len(args) != 2 {
-		return nil, errors.New("Incorrect number of arguments. Expecting 4")
+		return nil, errors.New("Incorrect number of arguments. Expecting 2")
 	}
 
 	//input sanitation
-	fmt.Println("- start init marble")
+	fmt.Println("- login")
 	if len(args[0]) <= 0 {
 		return nil, errors.New("1st argument must be a non-empty string")
 	}
@@ -262,13 +273,13 @@ func (t *SimpleChaincode) login(stub shim.ChaincodeStubInterface, args []string)
 		return nil, errors.New("2nd argument must be a non-empty string")
 	}
 	
-	//user:=User{}
+	
 	emailid := args[0]
 	
 	
 	passpin, err := strconv.Atoi(args[1])
 	if err != nil {
-		return nil, errors.New("Failed to get phone as cannot convert it to int")
+		return nil, errors.New("Failed to get passpin as cannot convert it to int")
 	}
 	
 
@@ -284,22 +295,17 @@ UserAsBytes, err := stub.GetState("getusers")
 
 
 
-	for i=0;i<allusers.Userlist.length;i++{
+	for i:=0;i<len(allusers.Userlist);i++{
 		
 		
 	if(allusers.Userlist[i].Email==emailid && allusers.Userlist[i].PassPin==passpin){
-	var login Login
-    login.Token="abcdefghijkl123456789"
 	
-	jsonAsBytes, _ := json.Marshal(allusers)
-	err = stub.PutState("getusers", jsonAsBytes)								//rewrite open orders
-	if err != nil {
-		return nil, err
-	}
-	fmt.Println("- end user_register")
-return nil, nil
+	
+return []byte(allusers.Userlist[i].Email), nil
 }
-
+	}
+return nil, nil
+	}
 
 
 func (t *SimpleChaincode) Delete(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
@@ -316,7 +322,7 @@ func (t *SimpleChaincode) Delete(stub shim.ChaincodeStubInterface, args []string
 	//get the marble index
 	userAsBytes, err := stub.GetState(userIndexStr)
 	if err != nil {
-		return nil, errors.New("Failed to get marble index")
+		return nil, errors.New("Failed to get array index")
 	}
 	var userIndex []string
 	json.Unmarshal(userAsBytes, &userIndex)								//un stringify it aka JSON.parse()
@@ -325,7 +331,7 @@ func (t *SimpleChaincode) Delete(stub shim.ChaincodeStubInterface, args []string
 	for i,val := range userIndex{
 		fmt.Println(strconv.Itoa(i) + " - looking at " + val + " for " + name)
 		if val == name{															//find the correct marble
-			fmt.Println("found marble")
+		
 			userIndex = append(userIndex[:i], userIndex[i+1:]...)			//remove it
 			for x:= range userIndex{											//debug prints...
 				fmt.Println(string(x) + " - " + userIndex[x])
@@ -337,3 +343,65 @@ func (t *SimpleChaincode) Delete(stub shim.ChaincodeStubInterface, args []string
 	err = stub.PutState(userIndexStr, jsonAsBytes)
 	return nil, nil
 }
+func (t *SimpleChaincode) SaveSession(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
+	
+	var err error
+	fmt.Println("running write()")
+
+	if len(args) != 2 {
+		return nil, errors.New("Incorrect number of arguments. Expecting 2.")
+	}
+	if len(args[0]) <= 0 {
+		return nil, errors.New("1st argument must be a non-empty string")
+	}
+	if len(args[1]) <= 0 {
+		return nil, errors.New("2nd argument must be a non-empty string")
+	}
+	authsession:=SessionAunthentication{}
+	authsession.Token = args[0]
+	authsession.Email = args[1]
+	UserAsBytes, err := stub.GetState("savesession")
+	if err != nil {
+		return nil, errors.New("Failed to get users")
+	}
+	var session Session
+	json.Unmarshal(UserAsBytes, &session)										//un stringify it aka JSON.parse()
+	
+	session.StoreSession = append(session.StoreSession,authsession);	
+	fmt.Println("allsessions",session.StoreSession)					//append to allusers
+	fmt.Println("! appended user to allsessions")
+	jsonAsBytes, _ := json.Marshal(session)
+	fmt.Println("json",jsonAsBytes)
+	err = stub.PutState("savesession", jsonAsBytes)								//rewrite allusers
+	if err != nil {
+		return nil, err
+	}
+	fmt.Println("- end save session")
+return nil, nil
+}
+func (t *SimpleChaincode) SetUserForSession(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
+	var token string
+	var err error
+	fmt.Println("running write()")
+
+	if len(args) != 1 {
+		return nil, errors.New("Incorrect number of arguments. Expecting 2.")
+	}
+	token=args[0]
+	    
+	UserAsBytes, err := stub.GetState("savesession")
+	if err != nil {
+		return nil, errors.New("failed to get sessions")
+	}
+	var session Session
+	 json.Unmarshal(UserAsBytes, &session)
+	 for i:=0;i<len(session.StoreSession);i++{
+	if(session.StoreSession[i].Token==token ){
+	
+	
+return []byte(session.StoreSession[i].Email), nil
+}
+	}
+return nil, nil
+	}
+	
