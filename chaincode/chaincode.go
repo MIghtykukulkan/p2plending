@@ -21,9 +21,12 @@ import (
 	"errors"
 	"fmt"
 	"strconv"
+	"crypto/md5"
 	//"strings"
 	//"reflect"
-
+	"bytes"
+	"encoding/binary"
+     
 	"github.com/hyperledger/fabric/core/chaincode/shim"
 )
 
@@ -55,6 +58,36 @@ Email string `json:"email"`
 type Session struct{
 	
 StoreSession []SessionAunthentication `json:"session"`
+}
+
+type BidInfo struct{
+Id  int `json:"id"`
+BidCreationTime int64 `json:"bidcreationtime"`
+CampaignId string `json:"campaignid"`
+UserId string `json:"userid"`
+Quote int  `json:"quote"`
+
+}
+type CreateCampaign struct{
+	Status string `json:"status"`
+	Id string `json:"id"`
+    UserId string `json:"userid"`
+    Title string `json:"title"`
+    Description string `json:"description"`
+    LoanAmount int `json:"loanamount"`
+    Interest  float64 `json:"interest"`
+    NoOfTerms string `json:"noOfTerms"`
+    Bidlist []BidInfo   `json:"bidlist"`
+    LowestBid BidInfo   `json:"bidinfo"`
+    NotermsRemaining int  `json:"notermsremaining"`
+  }
+type CampaignList struct{
+	Campaignlist []CreateCampaign `json:"campaignlist"`
+}
+type CampaignListUser struct{
+
+Campaign []CreateCampaign `json:"campaignuserlist"`
+
 }
 type SimpleChaincode struct {
 }
@@ -119,6 +152,9 @@ func (t *SimpleChaincode) Invoke(stub shim.ChaincodeStubInterface, function stri
 	}else if function == "SaveSession" {
 		return t.SaveSession(stub, args)
 
+	}else if function == "CreateCampaign" {
+		return t.CreateCampaign(stub, args)
+
 	}
 
 	fmt.Println("invoke did not find func: " + function)
@@ -157,6 +193,9 @@ func (t *SimpleChaincode) Query(stub shim.ChaincodeStubInterface, function strin
 
 	}else if function == "auntheticatetoken" {
 		return t.SetUserForSession(stub, args)
+
+	}else if function == "Campaignlist" {
+		return t.Campaignlist(stub, args)
 
 	}
 	fmt.Println("query did not find func: " + function)
@@ -405,3 +444,121 @@ return []byte(session.StoreSession[i].Email), nil
 return nil, nil
 	}
 	
+
+	func (t *SimpleChaincode) CreateCampaign(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
+	var err error
+
+	
+	if len(args) != 8 {
+		return nil, errors.New("Incorrect number of arguments. Expecting 8")
+	}
+
+	//input sanitation
+	fmt.Println("- start registration")
+	if len(args[0]) <= 0 {
+		return nil, errors.New("1st argument must be a non-empty string")
+	}
+	if len(args[1]) <= 0 {
+		return nil, errors.New("2nd argument must be a non-empty string")
+	}
+	if len(args[2]) <= 0 {
+		return nil, errors.New("3rd argument must be a non-empty string")
+	}
+	if len(args[3]) <= 0 {
+		return nil, errors.New("4th argument must be a non-empty string")
+	}
+	if len(args[4]) <= 0 {
+		return nil, errors.New("5th argument must be a non-empty string")
+	}
+	if len(args[5]) <= 0 {
+		return nil, errors.New("6th argument must be a non-empty string")
+	}
+	if len(args[6]) <= 0 {
+		return nil, errors.New("7th argument must be a non-empty string")
+	}
+	if len(args[7]) <= 0 {
+		return nil, errors.New("7th argument must be a non-empty string")
+	}
+	cuser:=CreateCampaign{}
+	cuser.Status = args[0]
+	cuser.Id=args[1]
+    cuser.UserId = args[2]
+	
+	cuser.Title=args[3]
+	cuser.Description=args[4]
+	cuser.LoanAmount, err = strconv.Atoi(args[5])
+	if err != nil {
+		return nil, errors.New("Failed to get loanamount as cannot convert it to int")
+	}
+	cuser.Interest, err = strconv.ParseFloat(args[6],32)
+	if err != nil {
+		return nil, errors.New("Failed to get interest as cannot convert it to int")
+	}
+	cuser.NoOfTerms=args[7]
+	
+	fmt.Println("cuser",cuser)
+
+UserAsBytes, err := stub.GetState("getcusers")
+	if err != nil {
+		return nil, errors.New("Failed to get users")
+	}
+	var campaignlist CampaignList
+	json.Unmarshal(UserAsBytes, &campaignlist)										//un stringify it aka JSON.parse()
+	
+	campaignlist.Campaignlist = append(campaignlist.Campaignlist,cuser);	
+	fmt.Println("campaignallusers",campaignlist.Campaignlist)					//append to allusers
+	fmt.Println("! appended cuser to campaignallusers")
+	jsonAsBytes, _ := json.Marshal(campaignlist)
+	fmt.Println("json",jsonAsBytes)
+	err = stub.PutState("getcusers", jsonAsBytes)								//rewrite allusers
+	if err != nil {
+		return nil, err
+	}
+	fmt.Println("- end campaignlist")
+return nil, nil
+}
+
+func (t *SimpleChaincode) Campaignlist(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
+	var err error
+
+	if len(args) != 1 {
+		return nil, errors.New("Incorrect number of arguments. Expecting 2")
+	}
+
+	//input sanitation
+	fmt.Println("- campaignlist")
+	if len(args[0]) <= 0 {
+		return nil, errors.New("1st argument must be a non-empty string")
+	}
+	
+	
+	
+	userid := args[0]
+	
+UserAsBytes, err := stub.GetState("getcusers")
+	if err != nil {
+		return nil, errors.New("Failed to get users")
+	}
+	var campaignlist CampaignList
+	json.Unmarshal(UserAsBytes, &campaignlist)								//un stringify it aka JSON.parse()
+	
+
+fmt.Println("lenght",len(campaignlist.Campaignlist))
+var campaignlistuser CampaignListUser
+json.Unmarshal(UserAsBytes, &campaignlistuser)
+	for i:=0;i<len(campaignlist.Campaignlist);i++{
+		
+		
+	if(campaignlist.Campaignlist[i].UserId==userid){
+		
+	
+	campaignlistuser.Campaign=append(campaignlistuser.Campaign,campaignlist.Campaignlist[i]);
+	}
+	var buffer bytes.Buffer
+    sum := md5.Sum(buffer.Bytes())	
+	return []byte(campaign[:]), nil
+//return []byte(campaign), nil
+}
+	
+return nil,nil
+	}
