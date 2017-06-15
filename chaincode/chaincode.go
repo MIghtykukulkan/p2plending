@@ -21,11 +21,11 @@ import (
 	"errors"
 	"fmt"
 	"strconv"
-	"crypto/md5"
+	"time"
 	//"strings"
 	//"reflect"
-	"bytes"
-	"encoding/binary"
+
+	
      
 	"github.com/hyperledger/fabric/core/chaincode/shim"
 )
@@ -65,7 +65,7 @@ Id  int `json:"id"`
 BidCreationTime int64 `json:"bidcreationtime"`
 CampaignId string `json:"campaignid"`
 UserId string `json:"userid"`
-Quote int  `json:"quote"`
+Quote float64  `json:"quote"`
 
 }
 type CreateCampaign struct{
@@ -84,11 +84,7 @@ type CreateCampaign struct{
 type CampaignList struct{
 	Campaignlist []CreateCampaign `json:"campaignlist"`
 }
-type CampaignListUser struct{
 
-Campaign []CreateCampaign `json:"campaignuserlist"`
-
-}
 type SimpleChaincode struct {
 }
 
@@ -155,6 +151,9 @@ func (t *SimpleChaincode) Invoke(stub shim.ChaincodeStubInterface, function stri
 	}else if function == "CreateCampaign" {
 		return t.CreateCampaign(stub, args)
 
+	}else if function == "PostBid" {
+		return t.PostBid(stub, args)
+
 	}
 
 	fmt.Println("invoke did not find func: " + function)
@@ -193,9 +192,6 @@ func (t *SimpleChaincode) Query(stub shim.ChaincodeStubInterface, function strin
 
 	}else if function == "auntheticatetoken" {
 		return t.SetUserForSession(stub, args)
-
-	}else if function == "Campaignlist" {
-		return t.Campaignlist(stub, args)
 
 	}
 	fmt.Println("query did not find func: " + function)
@@ -518,47 +514,80 @@ UserAsBytes, err := stub.GetState("getcusers")
 return nil, nil
 }
 
-func (t *SimpleChaincode) Campaignlist(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
+
+func (t *SimpleChaincode) PostBid(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
 	var err error
 
-	if len(args) != 1 {
-		return nil, errors.New("Incorrect number of arguments. Expecting 2")
+	
+	if len(args) != 4 {
+		return nil, errors.New("Incorrect number of arguments. Expecting 8")
 	}
 
 	//input sanitation
-	fmt.Println("- campaignlist")
+	fmt.Println("- start registration")
 	if len(args[0]) <= 0 {
 		return nil, errors.New("1st argument must be a non-empty string")
 	}
+	if len(args[1]) <= 0 {
+		return nil, errors.New("2nd argument must be a non-empty string")
+	}
+	if len(args[2]) <= 0 {
+		return nil, errors.New("3rd argument must be a non-empty string")
+	}
+	if len(args[3]) <= 0 {
+		return nil, errors.New("4th argument must be a non-empty string")
+	}
 	
+	bid:=BidInfo{}
+	bid.Id,err = strconv.Atoi(args[0])
+	if err != nil {
+		return nil, errors.New("Failed to get id as cannot convert it to int")
+	}
+	bid.BidCreationTime = makeTimestamp()
+	bid.CampaignId=args[1]
+    bid.UserId=args[2]
+	bid.Quote,err=strconv.ParseFloat(args[3],32)
+	if err != nil {
+		return nil, errors.New("Failed to get Qoute as cannot convert it to int")
+	}
 	
-	
-	userid := args[0]
-	
+	fmt.Println("bid",bid)
+
 UserAsBytes, err := stub.GetState("getcusers")
 	if err != nil {
 		return nil, errors.New("Failed to get users")
 	}
+	
 	var campaignlist CampaignList
-	json.Unmarshal(UserAsBytes, &campaignlist)								//un stringify it aka JSON.parse()
+	json.Unmarshal(UserAsBytes, &campaignlist)	
 	
+	
+		for i:=0;i<len(campaignlist.Campaignlist);i++{
+		
+		
+	if(campaignlist.Campaignlist[i].Id==bid.CampaignId){
+		if(campaignlist.Campaignlist[0].Bidlist== nil){
+campaignlist.Campaignlist[i].Bidlist = append(campaignlist.Campaignlist[i].Bidlist,bid);
+campaignlist.Campaignlist[i].LowestBid= bid
+}else 
+if(campaignlist.Campaignlist[i].LowestBid.Quote > bid.Quote){
+campaignlist.Campaignlist[i].Bidlist = append(campaignlist.Campaignlist[i].Bidlist,bid);
+campaignlist.Campaignlist[i].LowestBid= bid
 
-fmt.Println("lenght",len(campaignlist.Campaignlist))
-var campaignlistuser CampaignListUser
-json.Unmarshal(UserAsBytes, &campaignlistuser)
-	for i:=0;i<len(campaignlist.Campaignlist);i++{
-		
-		
-	if(campaignlist.Campaignlist[i].UserId==userid){
-		
-	
-	campaignlistuser.Campaign=append(campaignlistuser.Campaign,campaignlist.Campaignlist[i]);
-	}
-	var buffer bytes.Buffer
-    sum := md5.Sum(buffer.Bytes())	
-	return []byte(campaign[:]), nil
-//return []byte(campaign), nil
 }
 	
-return nil,nil
+	jsonAsBytes, _ := json.Marshal(campaignlist)
+	fmt.Println("json",jsonAsBytes)
+	err = stub.PutState("getcusers", jsonAsBytes)								//rewrite allusers
+	if err != nil {
+		return nil, err
 	}
+	}
+		}
+fmt.Println("- end postbid")
+return nil, nil
+	}									
+func makeTimestamp() int64 {
+    return time.Now().UnixNano() / (int64(time.Millisecond)/int64(time.Nanosecond))
+}
+
