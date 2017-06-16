@@ -35,6 +35,7 @@ var userIndexStr = "_userindex"
 //var transactionIndexStr= "_transactionindex"
 
 type User struct {
+	Id    int `json:"id"`
 	Name  string `json:"name"` //the fieldtags of user are needed to store in the ledger
     Email string `json:"email"`
 	Phone int    `json:"phone"`
@@ -63,20 +64,20 @@ StoreSession []SessionAunthentication `json:"session"`
 type BidInfo struct{
 Id  int `json:"id"`
 BidCreationTime int64 `json:"bidcreationtime"`
-CampaignId string `json:"campaignid"`
+CampaignId int `json:"campaignid"`
 UserId string `json:"userid"`
 Quote float64  `json:"quote"`
 
 }
 type CreateCampaign struct{
 	Status string `json:"status"`
-	Id string `json:"id"`
+	Id int `json:"id"`
     UserId string `json:"userid"`
     Title string `json:"title"`
     Description string `json:"description"`
     LoanAmount int `json:"loanamount"`
     Interest  float64 `json:"interest"`
-    NoOfTerms string `json:"noOfTerms"`
+    NoOfTerms int `json:"noOfTerms"`
     Bidlist []BidInfo   `json:"bidlist"`
     LowestBid BidInfo   `json:"bidinfo"`
     NotermsRemaining int  `json:"notermsremaining"`
@@ -154,6 +155,9 @@ func (t *SimpleChaincode) Invoke(stub shim.ChaincodeStubInterface, function stri
 	}else if function == "PostBid" {
 		return t.PostBid(stub, args)
 
+	}else if function == "UpdatePayment" {
+		return t.UpdatePayment(stub, args)
+
 	}
 
 	fmt.Println("invoke did not find func: " + function)
@@ -224,7 +228,7 @@ func (t *SimpleChaincode) registerUser(stub shim.ChaincodeStubInterface, args []
 	var err error
 
 	
-	if len(args) != 8 {
+	if len(args) != 9 {
 		return nil, errors.New("Incorrect number of arguments. Expecting 8")
 	}
 
@@ -251,21 +255,28 @@ func (t *SimpleChaincode) registerUser(stub shim.ChaincodeStubInterface, args []
 	if len(args[6]) <= 0 {
 		return nil, errors.New("7th argument must be a non-empty string")
 	}
+	if len(args[7]) <= 0 {
+		return nil, errors.New("7th argument must be a non-empty string")
+	}
 	user:=User{}
-	user.Name = args[0]
-	user.Email = args[1]
-    user.Phone, err = strconv.Atoi(args[2])
+	user.Id, err = strconv.Atoi(args[0])
+	if err != nil {
+		return nil, errors.New("Failed to get id as cannot convert it to int")
+	}
+	user.Name = args[1]
+	user.Email = args[2]
+    user.Phone, err = strconv.Atoi(args[3])
 	if err != nil {
 		return nil, errors.New("Failed to get phone as cannot convert it to int")
 	}
-	user.Pan=args[3]
-	user.Aadhar,err=strconv.Atoi(args[4])
+	user.Pan=args[4]
+	user.Aadhar,err=strconv.Atoi(args[5])
 	if err != nil {
 		return nil, errors.New("Failed to get aadhar as cannot convert it to int")
 	}
-	user.UserType=args[5]
-	user.Upi=args[6]
-	user.PassPin, err = strconv.Atoi(args[7])
+	user.UserType=args[6]
+	user.Upi=args[7]
+	user.PassPin, err = strconv.Atoi(args[8])
 	if err != nil {
 		return nil, errors.New("Failed to get passpin as cannot convert it to int")
 	}
@@ -477,7 +488,10 @@ return nil, nil
 	}
 	cuser:=CreateCampaign{}
 	cuser.Status = args[0]
-	cuser.Id=args[1]
+	cuser.Id, err = strconv.Atoi(args[1])
+	if err != nil {
+		return nil, errors.New("Failed to get loanamount as cannot convert it to int")
+	}
     cuser.UserId = args[2]
 	
 	cuser.Title=args[3]
@@ -490,7 +504,10 @@ return nil, nil
 	if err != nil {
 		return nil, errors.New("Failed to get interest as cannot convert it to int")
 	}
-	cuser.NoOfTerms=args[7]
+	cuser.NoOfTerms,err=strconv.Atoi(args[7])
+	if err != nil {
+		return nil, errors.New("Failed to get NoOfTerms as cannot convert it to int")
+	}
 	
 	fmt.Println("cuser",cuser)
 
@@ -544,7 +561,10 @@ func (t *SimpleChaincode) PostBid(stub shim.ChaincodeStubInterface, args []strin
 		return nil, errors.New("Failed to get id as cannot convert it to int")
 	}
 	bid.BidCreationTime = makeTimestamp()
-	bid.CampaignId=args[1]
+	bid.CampaignId, err = strconv.Atoi(args[1])
+	if err != nil {
+		return nil, errors.New("Failed to get CampaignId as cannot convert it to int")
+	}
     bid.UserId=args[2]
 	bid.Quote,err=strconv.ParseFloat(args[3],32)
 	if err != nil {
@@ -586,8 +606,75 @@ campaignlist.Campaignlist[i].LowestBid= bid
 		}
 fmt.Println("- end postbid")
 return nil, nil
-	}									
-func makeTimestamp() int64 {
-    return time.Now().UnixNano() / (int64(time.Millisecond)/int64(time.Nanosecond))
-}
+	}									//un stringify it aka JSON.parse()
+	
 
+
+	func (t *SimpleChaincode) UpdatePayment(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
+	var err error
+
+	
+	if len(args) != 3 {
+		return nil, errors.New("Incorrect number of arguments. Expecting 8")
+	}
+
+	//input sanitation
+	fmt.Println("- start registration")
+	if len(args[0]) <= 0 {
+		return nil, errors.New("1st argument must be a non-empty string")
+	}
+	if len(args[1]) <= 0 {
+		return nil, errors.New("2nd argument must be a non-empty string")
+	}
+	if len(args[2]) <= 0 {
+		return nil, errors.New("3rd argument must be a non-empty string")
+	}
+	
+	
+	
+	CampaignId,err := strconv.Atoi(args[0])
+	if err != nil {
+		return nil, errors.New("Failed to get CampaignId as cannot convert it to int")
+	}
+	
+    UserId := args[1]
+	
+    TransactionId := args[2]
+	fmt.Println("TransactionId",TransactionId)
+UserAsBytes, err := stub.GetState("getcusers")
+	if err != nil {
+		return nil, errors.New("Failed to get users")
+	}
+	
+	var campaignlist CampaignList
+	json.Unmarshal(UserAsBytes, &campaignlist)	
+	
+	
+		for i:=0;i<len(campaignlist.Campaignlist);i++{
+			if(campaignlist.Campaignlist[i].Id==CampaignId && campaignlist.Campaignlist[i].LowestBid.UserId==UserId){
+		if(campaignlist.Campaignlist[i].NotermsRemaining==0){
+campaignlist.Campaignlist[i].NotermsRemaining=campaignlist.Campaignlist[i].NoOfTerms
+}else {
+campaignlist.Campaignlist[i].NotermsRemaining = campaignlist.Campaignlist[i].NotermsRemaining-1
+
+}
+		
+	
+	
+	jsonAsBytes, _ := json.Marshal(campaignlist)
+	fmt.Println("json",jsonAsBytes)
+	err = stub.PutState("getcusers", jsonAsBytes)								//rewrite allusers
+	if err != nil {
+		return nil, err
+	}
+	}
+		}
+		
+fmt.Println("- end updatepayment")
+return nil, nil
+	}									//un stringify it aka JSON.parse()
+	
+	
+func makeTimestamp() int64 {
+   return time.Now().UnixNano() / (int64(time.Millisecond)/int64(time.Nanosecond))
+}
