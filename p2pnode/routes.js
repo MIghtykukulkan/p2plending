@@ -10,6 +10,7 @@ const createCampaign = require('./functions/createCampaign');
 const login = require('./functions/login');
 const date = require('date-and-time');
 const postbid = require('./functions/postbid');
+const fetchCampaignlist = require('./functions/fetchCampaignlist');
 //const profile = require('./functions/profile');
 //const password = require('./functions/password'); 
 //const config = require('./config1/config.json');
@@ -65,7 +66,7 @@ module.exports = router => {
 	console.log("entering register function in functions");
 
 	router.post('/registerUser', (req, res) => {
-        const id = req.body.id;
+         const id = "43sadewr4ewr21";
 		console.log("data in id:"+id);
 		const name = req.body.name;
 		console.log("data in name:"+name);
@@ -85,7 +86,6 @@ module.exports = router => {
 		console.log("data in passpin:"+passpin);
 		
 			
-     
 		if (!id ||!name || !email || !phone || !pan ||!aadhar ||!usertype ||!upi ||!passpin || !id.trim()|| !name.trim() ||!email.trim()||!phone.trim()
 		|| !pan.trim() ||!aadhar.trim()|| !usertype.trim()||!upi.trim()||!passpin.trim()) {
              //the if statement checks if any of the above paramenters are null or not..if is the it sends an error report.
@@ -98,7 +98,7 @@ module.exports = router => {
 			.then(result => {
 
 			//	res.setHeader('Location', '/registerUser/'+email);
-				res.status(result.status).json({ message: result.message })
+				res.status(result.status).json({status:201, message: result.message })
 			})
 
 			.catch(err => res.status(err.status).json({ message: err.message }));
@@ -139,9 +139,6 @@ module.exports = router => {
 		//let now = new Date();
         const bid_id = req.body.bid_id;
 		console.log("bid id  "+bid_id);
-		//date.format(now, 'YYYY/MM/DD HH:mm:ss');
-		const bid_creation_time = req.body.bid_creation_time;
-		console.log("bid creation time "+bid_creation_time); 
 		const bid_campaign_id = req.body.bid_campaign_id;
 		console.log("bid_campaign_details  "+bid_campaign_id);
 		const bid_user_id = req.body.bid_user_id;
@@ -150,15 +147,14 @@ module.exports = router => {
 
 			
      
-		if (!bid_id ||!bid_creation_time || !bid_campaign_id || !bid_user_id || !bid_quote || !bid_id.trim()|| !bid_creation_time.trim() ||!bid_campaign_id.trim()||!bid_user_id.trim()
-		|| !bid_quote.trim()) {
+		if (!bid_id || !bid_campaign_id || !bid_user_id || !bid_quote || !bid_id.trim() ||!bid_campaign_id.trim()||!bid_user_id.trim()|| !bid_quote.trim()) {
              //the if statement checks if any of the above paramenters are null or not..if is the it sends an error report.
 			res.status(400).json({message: 'Invalid Request !'});
 
 		} else {
 			
 			
-			postbid.postbid(bid_id,bid_creation_time,bid_campaign_id,bid_user_id,bid_quote)
+			postbid.postbid(bid_id,bid_campaign_id,bid_user_id,bid_quote)
 			.then(result => {
 
 			//	res.setHeader('Location', '/registerUser/'+email);
@@ -166,6 +162,22 @@ module.exports = router => {
 			})
 
 			.catch(err => res.status(err.status).json({ message: err.message }));
+		}
+	});
+	router.get('/fetchCampaignlist', (req,res) => {
+           if (1==1) {
+          
+		 	fetchCampaignlist.fetch_Campaign_list({"user":"risabh","getcusers":"getcusers"})
+
+			.then(function(result){
+					res.json(result)
+			} )
+
+			.catch(err => res.status(err.status).json({ message: err.message }));
+
+		} else {
+
+			res.status(401).json({ message: 'cant fetch data !' });
 		}
 	});
 }

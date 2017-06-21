@@ -93,13 +93,13 @@ function User_login(params) {
                 return reject({statusCode: constants.INVALID_INPUT, body: 'Could not fetch login details. Invalid params' })}
             
              
-         /* 
+        
             var user = params.user;
             if(!validate.isValidString(user)){
                 logHelper.logError(logger, 'get login details', 'Invalid user');
                 return reject({statusCode: constants.INVALID_INPUT, body: 'Could not fetch login details. Invalid user' })
             }
-            */
+        
             
             var emailid = params.email;
             if(!validate.isValidString(emailid)){
@@ -209,7 +209,6 @@ function postbid(params) {
 
             var reqSpec = getRequestSpec({functionName: 'PostBid',args: [
             bid_details.bid_id,
-            bid_details.bid_creation_time,
             bid_details.bid_campaign_id,
             bid_details.bid_user_id,
             bid_details.bid_quote
@@ -231,6 +230,52 @@ function postbid(params) {
             logHelper.logError(logger, 'postbid', 'Could not postbid on blockchain ledger: ', err);
             return reject({statusCode: constants.INTERNAL_SERVER_ERROR, body: 'Could not postbid user' });
         }
+    });
+}
+
+//get campaign details based on email id
+function fetchCampaignlist(params) {
+    console.log(params,'data in params for query method')
+    return new Promise(function(resolve, reject){
+       
+        try{
+            logHelper.logEntryAndInput(logger, 'fetch campaign details', params);
+
+            if(!validate.isValidJson(params)){
+                logHelper.logError(logger, 'fetch campaign details', 'Invalid params');
+                return reject({statusCode: constants.INVALID_INPUT, body: 'Could not fetch campaign details. Invalid params' })}
+            
+             
+         
+            var user = params.user;
+            if(!validate.isValidString(user)){
+                logHelper.logError(logger, 'fetch campaign details of user', 'Invalid user');
+                return reject({statusCode: constants.INVALID_INPUT, body: 'Could not fetch campaign details. Invalid user' })
+            }
+            
+            
+            var getcusers = params.getcusers;
+            if(!validate.isValidString(getcusers)){
+                logHelper.logError(logger, 'fetch campaign details of user', 'Invalid user');
+                return reject({statusCode: constants.INVALID_INPUT, body: 'Could not fetch campaign details. Invalid user' })
+            }    
+            var reqSpec = getRequestSpec({functionName: 'readuser', args: ["getcusers"]});
+            recursiveQuery({requestSpec: reqSpec, user: user})
+            .then(function(resp){
+                logHelper.logMessage(logger, 'fetched campaign details', 'Successfully fetched login details', resp.body);
+                return resolve({statusCode: constants.SUCCESS, body: resp.body});
+            })
+            .catch(function(err){   
+                logHelper.logError(logger, 'getcusers', 'Could not fetch user details', err);
+                return reject({statusCode: constants.INTERNAL_SERVER_ERROR, body: 'Could not fetch campaign details' });
+
+            });
+
+        }
+        catch(err){
+            logHelper.logError(logger, 'fetchcampaigndetails', 'Could not fetch property ad ', err);
+            return reject({statusCode: constants.INTERNAL_SERVER_ERROR, body: 'Could not fetch campaign details' });
+      }
     });
 }
   
@@ -671,7 +716,7 @@ function isUserEnrolled(params){
              logHelper.logError(logger, 'isUserEnrolled', 'Could not get user enrollment status '+username, err);
              return reject({statusCode: constants.INTERNAL_SERVER_ERROR, body: 'Could not get user enrollment status' });
         }
-    })
+    });
    
 }
 
@@ -680,6 +725,7 @@ module.exports = {
     User_login: User_login,
     Create_Campaign:Create_Campaign,
     postbid:postbid,
+    fetchCampaignlist:fetchCampaignlist,
     recursiveRegister: recursiveRegister,
     recursiveLogin: recursiveLogin,
     isUserEnrolled: isUserEnrolled,

@@ -6,13 +6,12 @@ var bcSdk = require('../src/blockchain/blockchain_sdk');
 var user = 'risabh.s';
 var affiliation = 'fundraiser';
 //exports is used here so that registerUser can be exposed for router and blockchainSdk file
-exports.postbid = (bid_id,bid_creation_time,bid_campaign_id,bid_user_id,bid_quote)=>
+exports.postbid = (bid_id,bid_campaign_id,bid_user_id,bid_quote)=>
 new Promise((resolve,reject) => {
 	
 
 	const bid_details =({
                             bid_id:bid_id,
-                            bid_creation_time:bid_creation_time,
                             bid_campaign_id:bid_campaign_id,
                             bid_user_id:bid_user_id,
                             bid_quote:bid_quote

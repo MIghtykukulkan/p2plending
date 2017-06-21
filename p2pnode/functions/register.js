@@ -29,7 +29,7 @@ new Promise((resolve,reject) => {
 
 
 
-	.then(() => resolve({ status: 201, message: 'User Registered Sucessfully !' }))
+	.then(() => resolve({ status: 201, message: usertype }))
 
 		.catch(err => {
 
