@@ -18,12 +18,7 @@ module.exports = router => {
 	  router.get('/', (req, res) => res.end('Welcome to p2plending,please hit a service !'));
 
 	   router.post('/login', (res, req) => {
-		//console.log("request obj " + req);
-
-		//var str = JSON.stringify(req.email1);
-
-		//console.log("stringify json obj"+str);
-
+	
 		const email = req.body.email;
 	     console.log(`email from ui side`,email);
 		const passpin = req.body.passpin;
@@ -64,7 +59,8 @@ module.exports = router => {
 	console.log("entering register function in functions");
 
 	router.post('/registerUser', (req, res) => {
-        const id = req.body.id;
+        const id = Math.floor(Math.random() * (100000 - 1)) + 1;
+	   // const id = "212121";
 		console.log("data in id:"+id);
 		const name = req.body.name;
 		console.log("data in name:"+name);
@@ -85,8 +81,8 @@ module.exports = router => {
 		
 			
      
-		if (!id ||!name || !email || !phone || !pan ||!aadhar ||!usertype ||!upi ||!passpin || !id.trim()|| !name.trim() ||!email.trim()||!phone.trim()
-		|| !pan.trim() ||!aadhar.trim()|| !usertype.trim()||!upi.trim()||!passpin.trim()) {
+		if (!name || !email || !phone ||!usertype ||!upi ||!passpin || !name.trim() ||!email.trim()||!phone.trim()
+		|| !usertype.trim()||!upi.trim()||!passpin.trim()) {
              //the if statement checks if any of the above paramenters are null or not..if is the it sends an error report.
 			res.status(400).json({message: 'Invalid Request !'});
 
@@ -97,7 +93,7 @@ module.exports = router => {
 			.then(result => {
 
 			//	res.setHeader('Location', '/registerUser/'+email);
-				res.status(result.status).json({ message: result.message })
+				res.status(result.status).json({status:result.status, message: result.message })
 			})
 
 			.catch(err => res.status(err.status).json({ message: err.message }));
@@ -128,7 +124,7 @@ module.exports = router => {
 			.then(result => {
 
 			//	res.setHeader('Location', '/registerUser/'+email);
-				res.status(result.status).json({ message: result.message })
+				res.status(result.status).json({status:result.status, message: result.message })
 			})
 
 			.catch(err => res.status(err.status).json({ message: err.message }));
@@ -160,13 +156,13 @@ module.exports = router => {
 			.then(result => {
 
 			//	res.setHeader('Location', '/registerUser/'+email);
-				res.status(result.status).json({ message: result.message })
+				res.status(result.status).json({status:result.status, message: result.message })
 			})
 
 			.catch(err => res.status(err.status).json({ message: err.message }));
 		}
 	});
-		router.get('/fetchCampaignlist', (req,res) => {
+		router.get('/campaign/Campaignlist', (req,res) => {
            if (1==1) {
           
 		 	fetchCampaignlist.fetch_Campaign_list({"user":"risabh","getcusers":"getcusers"})
@@ -182,7 +178,7 @@ module.exports = router => {
 			res.status(401).json({ message: 'cant fetch data !' });
 		}
 	});
-	router.get('/fetch_active_Campaignlist', (req,res) => {
+	router.get('/campaign/openCampaigns', (req,res) => {
            if (1==1) {
           
 		 	fetchActiveCampaignlist.fetch_Active_Campaign_list({"user":"risabh","getcusers":"getcusers"})
@@ -216,4 +212,19 @@ module.exports = router => {
 			return res.status(401).json({ message: 'cant fetch data !' });
 		}
 	});
+	router.post('/user/login',function(req,res) {
+		console.log(req.body)
+    res.send({ "status": "201","usertype": "lender","token": "daidsa876dsa0dslbabds987"})});
+
+
+router.get('/user/logout',function(req,res) {
+    res.send({status :"201",message:"user logged out successfully"})
+})
+router.get('/campaign/updatePayment', function(req, res) {
+
+    console.log(req.body)
+
+    res.send({
+  "message": "bid successful","status": "201","id": "d290f1ee-6c54-4b01-90e6-d701748f0851"});
+});
 }
