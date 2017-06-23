@@ -63,7 +63,7 @@ StoreSession []SessionAunthentication `json:"session"`
 
 type BidInfo struct{
 Id  int `json:"id"`
-BidCreationTime int64 `json:"bidcreationtime"`
+BidCreationTime string `json:"bidcreationtime"`
 CampaignId int `json:"campaignid"`
 UserId string `json:"userid"`
 Quote float64  `json:"quote"`
@@ -246,12 +246,12 @@ func (t *SimpleChaincode) registerUser(stub shim.ChaincodeStubInterface, args []
 	if len(args[3]) <= 0 {
 		return nil, errors.New("4th argument must be a non-empty string")
 	}
-	if len(args[4]) <= 0 {
+	/*if len(args[4]) <= 0 {
 		return nil, errors.New("5th argument must be a non-empty string")
 	}
 	if len(args[5]) <= 0 {
 		return nil, errors.New("6th argument must be a non-empty string")
-	}
+	}*/
 	if len(args[6]) <= 0 {
 		return nil, errors.New("7th argument must be a non-empty string")
 	}
@@ -675,6 +675,9 @@ return nil, nil
 	}									//un stringify it aka JSON.parse()
 	
 	
-func makeTimestamp() int64 {
-   return time.Now().UnixNano() / (int64(time.Millisecond)/int64(time.Nanosecond))
+func makeTimestamp() string {
+	t := time.Now()
+	
+    return t.Format(("2006-01-02T15:04:05.999999-07:00"))
+   //return time.Now().UnixNano() / (int64(time.Millisecond)/int64(time.Nanosecond))
 }
