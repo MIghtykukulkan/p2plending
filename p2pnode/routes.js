@@ -157,7 +157,7 @@ module.exports = router => {
 			.catch(err => res.status(err.status).json({ message: err.message }));
 		}
 	});
-		router.get('/fetchCampaignlist', (req,res) => {
+		router.get('/campaign/Campaignlist', (req,res) => {
            if (1==1) {
           
 		 	fetchCampaignlist.fetch_Campaign_list({"user":"risabh","getcusers":"getcusers"})
@@ -173,7 +173,7 @@ module.exports = router => {
 			res.status(401).json({ message: 'cant fetch data !' });
 		}
 	});
-	router.get('/fetch_active_Campaignlist', (req,res) => {
+	router.get('/campaign/openCampaigns', (req,res) => {
            if (1==1) {
           
 		 	fetchActiveCampaignlist.fetch_Active_Campaign_list({"user":"risabh","getcusers":"getcusers"})
