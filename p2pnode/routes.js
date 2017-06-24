@@ -1,14 +1,10 @@
 //here only routing is done and if the ro
 
 'use strict';
-/*
-const auth = require('basic-auth');
-const jwt = require('jsonwebtoken');
-*/
+
 const register = require('./functions/register');
 const createCampaign = require('./functions/createCampaign');
 const login = require('./functions/login');
-const date = require('date-and-time');
 const postbid = require('./functions/postbid');
 const fetchCampaignlist =require('./functions/fetchCampaignlist');
 const fetchActiveCampaignlist =require('./functions/fetchActiveCampaignlist');
@@ -18,7 +14,7 @@ module.exports = router => {
 	  router.get('/', (req, res) => res.end('Welcome to p2plending,please hit a service !'));
 
 	   router.post('/login', (res, req) => {
-	
+
 		const email = req.body.email;
 	     console.log(`email from ui side`,email);
 		const passpin = req.body.passpin;
@@ -59,8 +55,8 @@ module.exports = router => {
 	console.log("entering register function in functions");
 
 	router.post('/registerUser', (req, res) => {
-        const id = Math.floor(Math.random() * (100000 - 1)) + 1;
-	   // const id = "212121";
+        const nid =  Math.floor(Math.random() * (100000 - 1)) + 1;
+		const id = nid.toString();
 		console.log("data in id:"+id);
 		const name = req.body.name;
 		console.log("data in name:"+name);
@@ -81,8 +77,8 @@ module.exports = router => {
 		
 			
      
-		if (!name || !email || !phone ||!usertype ||!upi ||!passpin || !name.trim() ||!email.trim()||!phone.trim()
-		|| !usertype.trim()||!upi.trim()||!passpin.trim()) {
+		if (!id ||!name || !email || !phone || !pan ||!aadhar ||!usertype ||!upi ||!passpin || !id.trim()|| !name.trim() ||!email.trim()||!phone.trim()
+		|| !pan.trim() ||!aadhar.trim()|| !usertype.trim()||!upi.trim()||!passpin.trim()) {
              //the if statement checks if any of the above paramenters are null or not..if is the it sends an error report.
 			res.status(400).json({message: 'Invalid Request !'});
 
@@ -93,7 +89,7 @@ module.exports = router => {
 			.then(result => {
 
 			//	res.setHeader('Location', '/registerUser/'+email);
-				res.status(result.status).json({status:result.status, message: result.message })
+				res.status(result.status).json({ message: result.message })
 			})
 
 			.catch(err => res.status(err.status).json({ message: err.message }));
@@ -102,7 +98,9 @@ module.exports = router => {
 
 	router.post('/createCampaign', (req, res) => {
           const  status = req.body.status;
-		  const campaign_id = req.body.campaign_id;
+		  const campaign_id123 =  Math.floor(Math.random() * (100000 - 1)) + 1;
+		const campaign_id = campaign_id123.toString();
+		console.log("data in id:"+campaign_id);
 		  const user_id=req.body.user_id;
 		  const	campaign_title=req.body.campaign_title;
           const campaign_discription= req.body.campaign_discription;
@@ -124,19 +122,16 @@ module.exports = router => {
 			.then(result => {
 
 			//	res.setHeader('Location', '/registerUser/'+email);
-				res.status(result.status).json({status:result.status, message: result.message })
+				res.status(result.status).json({ message: result.message })
 			})
 
 			.catch(err => res.status(err.status).json({ message: err.message }));
 		}
 	});
 	router.post('/postbid', (req, res) => {
-		//let now = new Date();
-        const bid_id = req.body.bid_id;
-		console.log("bid id  "+bid_id);
-		//date.format(now, 'YYYY/MM/DD HH:mm:ss');
-		//const bid_creation_time = req.body.bid_creation_time;
-	//	console.log("bid creation time "+bid_creation_time); 
+       const bid =  Math.floor(Math.random() * (100000 - 1)) + 1;
+		const bid_id = bid.toString();
+		console.log("data in id:"+bid_id); 
 		const bid_campaign_id = req.body.bid_campaign_id;
 		console.log("bid_campaign_details  "+bid_campaign_id);
 		const bid_user_id = req.body.bid_user_id;
@@ -156,7 +151,7 @@ module.exports = router => {
 			.then(result => {
 
 			//	res.setHeader('Location', '/registerUser/'+email);
-				res.status(result.status).json({status:result.status, message: result.message })
+				res.status(result.status).json({ message: result.message })
 			})
 
 			.catch(err => res.status(err.status).json({ message: err.message }));
@@ -212,19 +207,4 @@ module.exports = router => {
 			return res.status(401).json({ message: 'cant fetch data !' });
 		}
 	});
-	router.post('/user/login',function(req,res) {
-		console.log(req.body)
-    res.send({ "status": "201","usertype": "lender","token": "daidsa876dsa0dslbabds987"})});
-
-
-router.get('/user/logout',function(req,res) {
-    res.send({status :"201",message:"user logged out successfully"})
-})
-router.get('/campaign/updatePayment', function(req, res) {
-
-    console.log(req.body)
-
-    res.send({
-  "message": "bid successful","status": "201","id": "d290f1ee-6c54-4b01-90e6-d701748f0851"});
-});
 }
