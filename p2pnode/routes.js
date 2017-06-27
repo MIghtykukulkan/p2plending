@@ -13,7 +13,7 @@ module.exports = router => {
       
 	  router.get('/', (req, res) => res.end('Welcome to p2plending,please hit a service !'));
 
-	   router.post('/login', (res, req) => {
+	 /*  router.post('/login', (res, req) => {
 
 		const email = req.body.email;
 	     console.log(`email from ui side`,email);
@@ -50,7 +50,7 @@ module.exports = router => {
 	           router.post('/testmethod', function(req, res) {
                console.log(req.body)
                res.send({ "name": "risabh", "email": "rls@gmail.com" });
-});
+});*/
 
 	console.log("entering register function in functions");
 
@@ -88,7 +88,6 @@ module.exports = router => {
 			register.registerUser(id,name,email,phone,pan,aadhar,usertype,upi,passpin)
 			.then(result => {
 
-			//	res.setHeader('Location', '/registerUser/'+email);
 				res.status(result.status).json({ message: result.message })
 			})
 
@@ -122,10 +121,10 @@ module.exports = router => {
 			.then(result => {
 
 			//	res.setHeader('Location', '/registerUser/'+email);
-				res.status(result.status).json({ message: result.message })
+				res.status(result.status).json({status:201, message: result.message })
 			})
 
-			.catch(err => res.status(err.status).json({ message: err.message }));
+			.catch(err => res.status(err.status).json({ status:401,message: err.message }));
 		}
 	});
 	router.post('/postbid', (req, res) => {
@@ -173,38 +172,58 @@ module.exports = router => {
 			res.status(401).json({ message: 'cant fetch data !' });
 		}
 	});
+
 	router.get('/campaign/openCampaigns', (req,res) => {
            if (1==1) {
           
 		 	fetchActiveCampaignlist.fetch_Active_Campaign_list({"user":"risabh","getcusers":"getcusers"})
 
 			.then(function(result){
-				console.log("result array data"+result.campaignlist.body.campaignlist);
+			//	console.log("result array data"+result.campaignlist.body.campaignlist);
 
-				    var filteredcampaign=[];
-				   console.log("length of result array"+result.campaignlist.body.campaignlist.length);
-	        
-                 for(let i=0;i<result.campaignlist.body.campaignlist.length;i++){
+				     var filteredcampaign=[];
+				 //  console.log("length of result array"+result.campaignlist.body.campaignlist.length);
+                    for(let i=0;i<result.campaignlist.body.campaignlist.length;i++){
 	 
-	            if(result.campaignlist.body.campaignlist[i].status==="active"){
+	         if(result.campaignlist.body.campaignlist[i].status==="active"){
      
-		        filteredcampaign.push(result.campaignlist.body.campaignlist[i]);
-
-		     console.log("filteredampaign array "+filteredcampaign);
-			 strArray = JSON.stringify(filteredcampaign);
-			 console.log("array in strArray"+strArray);
-        return res.json({message:"active campaigns found",activeCampaigns:filteredcampaign});
+		 filteredcampaign.push(result.campaignlist.body.campaignlist[i]);
+			
 
 	} else if (result.campaignlist.body.campaignlist[i].status !=="active") {
 
         return res.json({status:409,message:'campaign not found'});
-		}}})
+		}
 
-			.catch(err => res.status(err.status).json({ message: err.message }));
+		        
+	}
+           		return res.json({message:"active campaigns found",filteredcampaign:filteredcampaign});
+})
 
-		} else {
+		.catch(err => res.status(err.status).json({ message: err.message }));
+
+		}else {
 
 			return res.status(401).json({ message: 'cant fetch data !' });
 		}
+
 	});
+	router.post('/login', function(req, res) {
+
+    console.log(req.body)
+
+    res.send({ 
+  "message": "user logged in successfully",
+  "status": 201,
+  "token": "d290f1ee6c544b0190e6d701748f0851" });
+});
+router.get('/logout', function(req, res) {
+
+    console.log(req.body)
+
+    res.send({ 
+  "message": "user logged out successfully",
+  "status": 201,
+   });
+});
 }

@@ -11,8 +11,6 @@ exports.fetch_Active_Campaign_list=(params)  =>{
     
 	.then((campaignArray) =>{ 
 		return resolve({status: 201, "campaignlist": campaignArray})})
-	
-
     
 		.catch(err => {
 
@@ -21,7 +19,7 @@ exports.fetch_Active_Campaign_list=(params)  =>{
 				return reject({ status: 409, message: 'cant fetch !' });
 
 			} else {
-				conslole.log("error occurred" + err);
+				console.log("error occurred" + err);
 
 				return reject({ status: 500, message: 'Internal Server Error !' });
 			}

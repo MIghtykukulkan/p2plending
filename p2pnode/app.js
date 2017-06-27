@@ -16,7 +16,6 @@ const app        = express();
 const bodyParser = require('body-parser');
 const loggerpac  = require('morgan');
 const router 	   = express.Router();
-
 var logger;
 var Promise = require('bluebird');
 var log4js = require('log4js');

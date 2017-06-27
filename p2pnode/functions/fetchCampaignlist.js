@@ -11,7 +11,7 @@ exports.fetch_Campaign_list=(params)  =>{
     
 	.then((campaignArray) =>{ 
 		console.log("data in campaignArray "+campaignArray)
-		return resolve({status: 201, "campaignlist": campaignArray})})
+		return resolve({campaignArray})})
 	
 
     
