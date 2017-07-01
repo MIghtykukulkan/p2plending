@@ -13,46 +13,7 @@ module.exports = router => {
       
 	  router.get('/', (req, res) => res.end('Welcome to p2plending,please hit a service !'));
 
-	 /*  router.post('/login', (res, req) => {
-
-		const email = req.body.email;
-	     console.log(`email from ui side`,email);
-		const passpin = req.body.passpin;
-	    console.log(passpin,'passpin from ui');
-        
-		
-
-		if (!email ||!passpin  || !email.trim() ||!passpin.trim() ) {
-
-			res.status(400).json({ message: 'Invalid Request !' });
-
-		} else {
-
-			login.loginUser(email,passpin)
-
-			.then(result => {
-
-             var token = "";
-             var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789rapidqubepvtltd";
-
-             for( var i=0; i < 25; i++ )
-             text += possible.charAt(Math.floor(Math.random() * possible.length));
-
-            console.log (token);
-			
-				res.status(result.status).json({ message: result.message, token: token,email:email});
-
-			})
-
-			.catch(err => res.status(err.status).json({ message: err.message }));
-		}
-	});
-	           router.post('/testmethod', function(req, res) {
-               console.log(req.body)
-               res.send({ "name": "risabh", "email": "rls@gmail.com" });
-});*/
-
-	console.log("entering register function in functions");
+	
 
 	router.post('/registerUser', (req, res) => {
         const nid =  Math.floor(Math.random() * (100000 - 1)) + 1;
@@ -89,6 +50,31 @@ module.exports = router => {
 			.then(result => {
 
 				res.status(result.status).json({ message: result.message })
+			})
+
+			.catch(err => res.status(err.status).json({ message: err.message }));
+		}
+	});
+
+	
+	  router.post('/login', (req,res) => {
+		const email = req.body.email;
+	     console.log(`email from ui side`,email);
+		const passpin = req.body.passpin;
+	    console.log(passpin,'passpin from ui');
+        
+		if (!email ||!passpin  || !email.trim() ||!passpin.trim() ) {
+
+			res.status(400).json({ message: 'Invalid Request !' });
+
+		} else {
+
+			login.loginUser(email,passpin)
+
+			.then(result => {
+			
+				return res.json({ message:"login success",email:result.resp.emailFromsdk,status:resp.status});
+
 			})
 
 			.catch(err => res.status(err.status).json({ message: err.message }));
@@ -208,7 +194,7 @@ module.exports = router => {
 		}
 
 	});
-	router.post('/login', function(req, res) {
+/*	router.post('/login', function(req, res) {
 
     console.log(req.body)
 
@@ -216,7 +202,7 @@ module.exports = router => {
   "message": "user logged in successfully",
   "status": 201,
   "token": "d290f1ee6c544b0190e6d701748f0851" });
-});
+});*/
 router.get('/logout', function(req, res) {
 
     console.log(req.body)

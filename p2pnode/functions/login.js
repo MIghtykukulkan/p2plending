@@ -1,70 +1,46 @@
 'use strict';
 
 //const user = require('../blockchai');
-var user= "risabh_login";
+var user = 'risabh.s';
 var bcSdk = require('../src/blockchain/blockchain_sdk.js');
 
 
-exports.loginUser = (email1, passpin) => 
+exports.loginUser = (email, passpin) => {
 
-	new Promise((resolve,reject) => {
+	return new Promise((resolve,reject) => {
 		const ui_login =({
-
-			email: email1,
+			email: email,
 			passpin: passpin
-
-			
 		});
-		console.log("ENTERING THE login MODULE");
-            return bcSdk.User_login({ ui_login})
+		
+		
 
-			.then(() => resolve({ status: 201, message: 'User signed in Sucessfully !',token:token }))
+                 bcSdk.User_login({user:user, ui_login:ui_login})
+				   /*
+						
+			console.log("ENTERING THE login MODULE");
+		     
+*/
+			.then(function(emailFromsdk)
+			{
+				 var token = "";
+                 var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+                    for (var i = 0; i < 25; i++)
+                   token += possible.charAt(Math.floor(Math.random() * possible.length));
+				  return resolve({ status: 201,token:token,emailFromsdk:emailFromsdk,message:"sucessfully logged in"})
+		})
 
 			.catch(err => {
 
 			if (err.code == 11000) {
 						
-				reject({ status: 409, message: 'User Already Registered !' });
+				return reject({ status: 409, message: 'some params are wrong please check !' });
 
 			} else {
-				conslole.log("error occurred" + err);
+				console.log(JSON.stringify(err));
 
 	}
 					})
-	});
-
-	/*	user.find({email: email})
-
-		.then(users => {
-
-			if (email.length == 0) {
-
-				reject({ status: 404, message: 'User Not Found !' });
-
-			} else {
-
-				return users[0];
-				
-			}
-		})
-
-		.then(user => {
-
-			const hashed_password = user.hashed_password;
-
-			if (bcrypt.compareSync(password, hashed_password)) {
-
-				resolve({ status: 200, message: email });
-
-			} else {
-
-				reject({ status: 401, message: 'Invalid Credentials !' });
-			}
-		})
-
-		.catch(err => reject({ status: 500, message: 'Internal Server Error !' }));
-
-	});
-*/
-
 	
+	})};

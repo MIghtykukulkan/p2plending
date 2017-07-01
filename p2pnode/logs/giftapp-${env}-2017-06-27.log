@@ -1,0 +1,837 @@
+[32m[2017-06-27 17:16:14.883] [INFO] BlockchainSampleClient - [39m
+[32m[2017-06-27 17:16:14.885] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-06-27 17:16:14.885] [INFO] BlockchainSampleClient - [39m>>> BlockchainSampleClient env local, started Tue Jun 27 2017 17:16:14 GMT+0530 (IST) <<<
+[32m[2017-06-27 17:16:14.885] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-06-27 17:16:14.886] [INFO] BlockchainSampleClient - [39mNode started via(process.argv): /usr/bin/nodejs,/home/risabh/nodeWorkspace/p2plending/p2pnode/app.js
+[32m[2017-06-27 17:16:14.886] [INFO] BlockchainSampleClient - [39mNode version: v6.10.3
+[32m[2017-06-27 17:16:14.886] [INFO] BlockchainSampleClient - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.10.3","v8":"5.1.281.101","uv":"1.9.1","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"56.1","modules":"48","openssl":"1.0.2k"}
+[32m[2017-06-27 17:16:14.886] [INFO] BlockchainSampleClient - [39m
+[32m[2017-06-27 17:16:14.887] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-06-27 17:16:14.887] [TRACE] app.js - [39msetup : entry
+[34m[2017-06-27 17:16:14.888] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-06-27 17:16:14.888] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix","password":"82ecbcc036adcc89fdd43464e6cb51f5aa276d5a2eb74a439e2a53bfe77b3704","host":"9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix.cloudant.com","port":443,"url":"https://9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix:82ecbcc036adcc89fdd43464e6cb51f5aa276d5a2eb74a439e2a53bfe77b3704@9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix.cloudant.com"}} 
+[34m[2017-06-27 17:16:14.894] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-06-27 17:16:14.894] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-06-27 17:16:14.895] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-06-27 17:16:14.895] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-06-27 17:16:15.692] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-06-27 17:16:15.697] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-06-27 17:16:15.697] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-06-27 17:16:15.698] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-06-27 17:16:15.699] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-06-27 17:16:15.704] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-06-27 17:16:15.707] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-06-27 17:16:15.805] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-06-27 17:16:15.821] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-06-27 17:16:15.821] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-06-27 17:16:16.019] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-06-27 17:16:16.035] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-06-27 17:16:16.035] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-06-27 17:16:16.036] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-06-27 17:16:16.039] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-06-27 17:16:16.040] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-06-27 17:16:16.246] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-06-27 17:16:16.261] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-06-27 17:16:16.263] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-06-27 17:16:16.268] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-06-27 17:16:16.269] [INFO] console - [39mserver is running on3001
+[32m[2017-06-27 17:16:28.191] [INFO] console - [39mdata in id:30984
+[32m[2017-06-27 17:16:28.192] [INFO] console - [39mdata in name:risabh
+[32m[2017-06-27 17:16:28.192] [INFO] console - [39mdata in email:risabh@rpqb.com
+[32m[2017-06-27 17:16:28.192] [INFO] console - [39mdata in phone:12344567890
+[32m[2017-06-27 17:16:28.192] [INFO] console - [39mdata in pan:pan12345
+[32m[2017-06-27 17:16:28.192] [INFO] console - [39mdata in aadhar:123423513256
+[32m[2017-06-27 17:16:28.192] [INFO] console - [39mdata in usertype:lender
+[32m[2017-06-27 17:16:28.192] [INFO] console - [39mdata in upi:upi@1324231
+[32m[2017-06-27 17:16:28.193] [INFO] console - [39mdata in passpin:123456
+[32m[2017-06-27 17:16:28.193] [INFO] console - [39mregister object[object Object]
+[32m[2017-06-27 17:16:28.193] [INFO] console - [39mENTERING THE Userregisteration from register.js to blockchainSdk
+[32m[2017-06-27 17:16:28.194] [INFO] console - [39mcalling SDK for registration
+[34m[2017-06-27 17:16:28.194] [TRACE] blockchain_sdk - [39mUserRegisteration : entry 
+[34m[2017-06-27 17:16:28.194] [TRACE] blockchain_sdk - [39mUserRegisteration : params - {"user":"risabh.s","UserDetails":{"id":"30984","name":"risabh","email":"risabh@rpqb.com","phone":"12344567890","pan":"pan12345","aadhar":"123423513256","usertype":"lender","upi":"upi@1324231","passpin":"123456"}} 
+[34m[2017-06-27 17:16:28.196] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 17:16:28.196] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["30984","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-06-27 17:16:34.298] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["30984","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]}
+[32m[2017-06-27 17:16:34.301] [INFO] blockchain_sdk - [39mUserRegisteration : Successfully registered user - EventInvokeSubmitted { uuid: '476255c2-888d-4142-9705-5eec86794c42' }
+[32m[2017-06-27 17:16:37.687] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 476255c2-888d-4142-9705-5eec86794c42 complete' }
+[32m[2017-06-27 17:28:09.287] [INFO] console - [39mdata in id:74205
+[32m[2017-06-27 17:28:09.287] [INFO] console - [39mdata in name:risabh
+[32m[2017-06-27 17:28:09.288] [INFO] console - [39mdata in email:risabh@rpqb.com
+[32m[2017-06-27 17:28:09.290] [INFO] console - [39mdata in phone:12344567890
+[32m[2017-06-27 17:28:09.294] [INFO] console - [39mdata in pan:pan12345
+[32m[2017-06-27 17:28:09.294] [INFO] console - [39mdata in aadhar:123423513256
+[32m[2017-06-27 17:28:09.294] [INFO] console - [39mdata in usertype:lender
+[32m[2017-06-27 17:28:09.295] [INFO] console - [39mdata in upi:upi@1324231
+[32m[2017-06-27 17:28:09.295] [INFO] console - [39mdata in passpin:123456
+[32m[2017-06-27 17:28:09.295] [INFO] console - [39mregister object[object Object]
+[32m[2017-06-27 17:28:09.299] [INFO] console - [39mENTERING THE Userregisteration from register.js to blockchainSdk
+[32m[2017-06-27 17:28:09.300] [INFO] console - [39mcalling SDK for registration
+[34m[2017-06-27 17:28:09.301] [TRACE] blockchain_sdk - [39mUserRegisteration : entry 
+[34m[2017-06-27 17:28:09.302] [TRACE] blockchain_sdk - [39mUserRegisteration : params - {"user":"risabh.s","UserDetails":{"id":"74205","name":"risabh","email":"risabh@rpqb.com","phone":"12344567890","pan":"pan12345","aadhar":"123423513256","usertype":"lender","upi":"upi@1324231","passpin":"123456"}} 
+[34m[2017-06-27 17:28:09.304] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 17:28:09.308] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["74205","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":0} 
+[31m[2017-06-27 17:28:09.832] [ERROR] blockchain_sdk - [39mdoInvoke : Could not perform invoke  - EventTransactionError {  error:    { Error: {"created":"@1498564689.828471719","description":"Secure read failed","file":"../src/core/lib/security/transport/secure_endpoint.c","file_line":157,"grpc_status":14,"referenced_errors":[{"created":"@1498564689.828451781","description":"OS Error","errno":104,"file":"../src/core/lib/iomgr/tcp_posix.c","file_line":229,"os_error":"Connection reset by peer","syscall":"recvmsg"}]}       at /home/risabh/nodeWorkspace/p2plending/p2pnode/node_modules/grpc/src/node/src/client.js:417:17 code: 14, metadata: [Object] },  msg: 'Error: {"created":"@1498564689.828471719","description":"Secure read failed","file":"../src/core/lib/security/transport/secure_endpoint.c","file_line":157,"grpc_status":14,"referenced_errors":[{"created":"@1498564689.828451781","description":"OS Error","errno":104,"file":"../src/core/lib/iomgr/tcp_posix.c","file_line":229,"os_error":"Connection reset by peer","syscall":"recvmsg"}]}' }
+[31m[2017-06-27 17:28:11.836] [ERROR] blockchain_sdk - [39mrecursiveInvoke : Invoke Retry 0 - {"statusCode":500,"body":"Could not perform invoke "}
+[34m[2017-06-27 17:28:11.838] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 17:28:11.838] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["74205","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":1} 
+[32m[2017-06-27 17:28:13.195] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["74205","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]}
+[32m[2017-06-27 17:28:13.196] [INFO] blockchain_sdk - [39mUserRegisteration : Successfully registered user - EventInvokeSubmitted { uuid: '026a7fac-bd58-46b0-9b7b-92ad211dd957' }
+[32m[2017-06-27 17:28:14.334] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 7d22c161-9708-45f1-9132-1558476e288a complete' }
+[32m[2017-06-27 17:28:16.854] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 026a7fac-bd58-46b0-9b7b-92ad211dd957 complete' }
+[32m[2017-06-27 17:30:58.059] [INFO] console - [39mdata in id:74755
+[32m[2017-06-27 17:30:58.059] [INFO] console - [39mdata in name:risabh
+[32m[2017-06-27 17:30:58.060] [INFO] console - [39mdata in email:risabh@rpqb.com
+[32m[2017-06-27 17:30:58.060] [INFO] console - [39mdata in phone:12344567890
+[32m[2017-06-27 17:30:58.060] [INFO] console - [39mdata in pan:pan12345
+[32m[2017-06-27 17:30:58.060] [INFO] console - [39mdata in aadhar:123423513256
+[32m[2017-06-27 17:30:58.060] [INFO] console - [39mdata in usertype:lender
+[32m[2017-06-27 17:30:58.061] [INFO] console - [39mdata in upi:upi@1324231
+[32m[2017-06-27 17:30:58.061] [INFO] console - [39mdata in passpin:123456
+[32m[2017-06-27 17:30:58.061] [INFO] console - [39mregister object[object Object]
+[32m[2017-06-27 17:30:58.062] [INFO] console - [39mENTERING THE Userregisteration from register.js to blockchainSdk
+[32m[2017-06-27 17:30:58.062] [INFO] console - [39mcalling SDK for registration
+[34m[2017-06-27 17:30:58.067] [TRACE] blockchain_sdk - [39mUserRegisteration : entry 
+[34m[2017-06-27 17:30:58.067] [TRACE] blockchain_sdk - [39mUserRegisteration : params - {"user":"risabh.s","UserDetails":{"id":"74755","name":"risabh","email":"risabh@rpqb.com","phone":"12344567890","pan":"pan12345","aadhar":"123423513256","usertype":"lender","upi":"upi@1324231","passpin":"123456"}} 
+[34m[2017-06-27 17:30:58.068] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 17:30:58.068] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["74755","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-06-27 17:30:58.626] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["74755","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]}
+[32m[2017-06-27 17:30:58.627] [INFO] blockchain_sdk - [39mUserRegisteration : Successfully registered user - EventInvokeSubmitted { uuid: 'e30b96a4-1b55-4d98-aa57-659d030dd976' }
+[32m[2017-06-27 17:31:03.082] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx e30b96a4-1b55-4d98-aa57-659d030dd976 complete' }
+[32m[2017-06-27 17:34:29.254] [INFO] console - [39mdata in id:97971
+[32m[2017-06-27 17:34:29.257] [INFO] console - [39mdata in name:risabh
+[32m[2017-06-27 17:34:29.257] [INFO] console - [39mdata in email:risabh@rpqb.com
+[32m[2017-06-27 17:34:29.259] [INFO] console - [39mdata in phone:12344567890
+[32m[2017-06-27 17:34:29.259] [INFO] console - [39mdata in pan:pan12345
+[32m[2017-06-27 17:34:29.259] [INFO] console - [39mdata in aadhar:123423513256
+[32m[2017-06-27 17:34:29.260] [INFO] console - [39mdata in usertype:lender
+[32m[2017-06-27 17:34:29.260] [INFO] console - [39mdata in upi:upi@1324231
+[32m[2017-06-27 17:34:29.260] [INFO] console - [39mdata in passpin:123456
+[32m[2017-06-27 17:34:29.260] [INFO] console - [39mregister object[object Object]
+[32m[2017-06-27 17:34:29.262] [INFO] console - [39mENTERING THE Userregisteration from register.js to blockchainSdk
+[32m[2017-06-27 17:34:29.262] [INFO] console - [39mcalling SDK for registration
+[34m[2017-06-27 17:34:29.263] [TRACE] blockchain_sdk - [39mUserRegisteration : entry 
+[34m[2017-06-27 17:34:29.263] [TRACE] blockchain_sdk - [39mUserRegisteration : params - {"user":"risabh.s","UserDetails":{"id":"97971","name":"risabh","email":"risabh@rpqb.com","phone":"12344567890","pan":"pan12345","aadhar":"123423513256","usertype":"lender","upi":"upi@1324231","passpin":"123456"}} 
+[34m[2017-06-27 17:34:29.263] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 17:34:29.264] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["97971","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":0} 
+[31m[2017-06-27 17:34:29.576] [ERROR] blockchain_sdk - [39mdoInvoke : Could not perform invoke  - EventTransactionError {  error:    { Error: {"created":"@1498565069.573749813","description":"Secure read failed","file":"../src/core/lib/security/transport/secure_endpoint.c","file_line":157,"grpc_status":14,"referenced_errors":[{"created":"@1498565069.573733034","description":"OS Error","errno":104,"file":"../src/core/lib/iomgr/tcp_posix.c","file_line":229,"os_error":"Connection reset by peer","syscall":"recvmsg"}]}       at /home/risabh/nodeWorkspace/p2plending/p2pnode/node_modules/grpc/src/node/src/client.js:417:17 code: 14, metadata: [Object] },  msg: 'Error: {"created":"@1498565069.573749813","description":"Secure read failed","file":"../src/core/lib/security/transport/secure_endpoint.c","file_line":157,"grpc_status":14,"referenced_errors":[{"created":"@1498565069.573733034","description":"OS Error","errno":104,"file":"../src/core/lib/iomgr/tcp_posix.c","file_line":229,"os_error":"Connection reset by peer","syscall":"recvmsg"}]}' }
+[31m[2017-06-27 17:34:31.578] [ERROR] blockchain_sdk - [39mrecursiveInvoke : Invoke Retry 0 - {"statusCode":500,"body":"Could not perform invoke "}
+[34m[2017-06-27 17:34:31.579] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 17:34:31.580] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["97971","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":1} 
+[31m[2017-06-27 17:34:32.872] [ERROR] blockchain_sdk - [39mdoInvoke : Could not perform invoke  - EventTransactionError {  error:    { Error       at /home/risabh/nodeWorkspace/p2plending/p2pnode/node_modules/grpc/src/node/src/client.js:417:17 code: 14, metadata: [Object] },  msg: 'Error' }
+[32m[2017-06-27 17:34:34.273] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx fa092c60-7a00-4013-b7bd-6c9c8979f8a1 complete' }
+[31m[2017-06-27 17:34:34.875] [ERROR] blockchain_sdk - [39mrecursiveInvoke : Invoke Retry 1 - {"statusCode":500,"body":"Could not perform invoke "}
+[34m[2017-06-27 17:34:34.876] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 17:34:34.876] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["97971","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":2} 
+[31m[2017-06-27 17:34:35.158] [ERROR] blockchain_sdk - [39mdoInvoke : Could not perform invoke  - EventTransactionError {  error:    { Error       at /home/risabh/nodeWorkspace/p2plending/p2pnode/node_modules/grpc/src/node/src/client.js:417:17 code: 14, metadata: [Object] },  msg: 'Error' }
+[32m[2017-06-27 17:34:36.599] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 06ea7cd7-a6cc-4fab-96fe-b419990d0462 complete' }
+[31m[2017-06-27 17:34:37.158] [ERROR] blockchain_sdk - [39mrecursiveInvoke : Invoke Retry 2 - {"statusCode":500,"body":"Could not perform invoke "}
+[34m[2017-06-27 17:34:37.159] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 17:34:37.159] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["97971","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":3} 
+[31m[2017-06-27 17:34:37.452] [ERROR] blockchain_sdk - [39mdoInvoke : Could not perform invoke  - EventTransactionError {  error:    { Error       at /home/risabh/nodeWorkspace/p2plending/p2pnode/node_modules/grpc/src/node/src/client.js:417:17 code: 14, metadata: [Object] },  msg: 'Error' }
+[31m[2017-06-27 17:34:39.454] [ERROR] blockchain_sdk - [39mrecursiveInvoke : Invoke Retry 3 - {"statusCode":500,"body":"Could not perform invoke "}
+[34m[2017-06-27 17:34:39.461] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 17:34:39.464] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["97971","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":4} 
+[32m[2017-06-27 17:34:39.892] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 0976d35d-5fab-45e5-bed4-f14168ea843b complete' }
+[32m[2017-06-27 17:34:40.718] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["97971","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]}
+[32m[2017-06-27 17:34:40.719] [INFO] blockchain_sdk - [39mUserRegisteration : Successfully registered user - EventInvokeSubmitted { uuid: '6fedb44b-2955-4eba-9b0c-bdbcf9ccbbe8' }
+[32m[2017-06-27 17:34:42.175] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx eff44b8c-869d-4b92-8764-c42a078ca7a1 complete' }
+[32m[2017-06-27 17:34:44.476] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 6fedb44b-2955-4eba-9b0c-bdbcf9ccbbe8 complete' }
+[32m[2017-06-27 17:43:04.400] [INFO] console - [39mdata in id:15648
+[32m[2017-06-27 17:43:04.400] [INFO] console - [39mdata in name:risabh
+[32m[2017-06-27 17:43:04.400] [INFO] console - [39mdata in email:risabh@rpqb.com
+[32m[2017-06-27 17:43:04.401] [INFO] console - [39mdata in phone:12344567890
+[32m[2017-06-27 17:43:04.401] [INFO] console - [39mdata in pan:pan12345
+[32m[2017-06-27 17:43:04.401] [INFO] console - [39mdata in aadhar:123423513256
+[32m[2017-06-27 17:43:04.401] [INFO] console - [39mdata in usertype:lender
+[32m[2017-06-27 17:43:04.402] [INFO] console - [39mdata in upi:upi@1324231
+[32m[2017-06-27 17:43:04.403] [INFO] console - [39mdata in passpin:123456
+[32m[2017-06-27 17:43:04.403] [INFO] console - [39mregister object[object Object]
+[32m[2017-06-27 17:43:04.404] [INFO] console - [39mENTERING THE Userregisteration from register.js to blockchainSdk
+[32m[2017-06-27 17:43:04.404] [INFO] console - [39mcalling SDK for registration
+[34m[2017-06-27 17:43:04.404] [TRACE] blockchain_sdk - [39mUserRegisteration : entry 
+[34m[2017-06-27 17:43:04.404] [TRACE] blockchain_sdk - [39mUserRegisteration : params - {"user":"risabh.s","UserDetails":{"id":"15648","name":"risabh","email":"risabh@rpqb.com","phone":"12344567890","pan":"pan12345","aadhar":"123423513256","usertype":"lender","upi":"upi@1324231","passpin":"123456"}} 
+[34m[2017-06-27 17:43:04.405] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 17:43:04.406] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["15648","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":0} 
+[31m[2017-06-27 17:43:04.659] [ERROR] blockchain_sdk - [39mdoInvoke : Could not perform invoke  - EventTransactionError {  error:    { Error: {"created":"@1498565584.657597705","description":"Secure read failed","file":"../src/core/lib/security/transport/secure_endpoint.c","file_line":157,"grpc_status":14,"referenced_errors":[{"created":"@1498565584.657574633","description":"OS Error","errno":104,"file":"../src/core/lib/iomgr/tcp_posix.c","file_line":229,"os_error":"Connection reset by peer","syscall":"recvmsg"}]}       at /home/risabh/nodeWorkspace/p2plending/p2pnode/node_modules/grpc/src/node/src/client.js:417:17 code: 14, metadata: [Object] },  msg: 'Error: {"created":"@1498565584.657597705","description":"Secure read failed","file":"../src/core/lib/security/transport/secure_endpoint.c","file_line":157,"grpc_status":14,"referenced_errors":[{"created":"@1498565584.657574633","description":"OS Error","errno":104,"file":"../src/core/lib/iomgr/tcp_posix.c","file_line":229,"os_error":"Connection reset by peer","syscall":"recvmsg"}]}' }
+[31m[2017-06-27 17:43:06.662] [ERROR] blockchain_sdk - [39mrecursiveInvoke : Invoke Retry 0 - {"statusCode":500,"body":"Could not perform invoke "}
+[34m[2017-06-27 17:43:06.663] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 17:43:06.664] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["15648","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":1} 
+[32m[2017-06-27 17:43:08.017] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["15648","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]}
+[32m[2017-06-27 17:43:08.018] [INFO] blockchain_sdk - [39mUserRegisteration : Successfully registered user - EventInvokeSubmitted { uuid: 'b1a8ec36-918d-42fa-b78d-1c830a906b8b' }
+[32m[2017-06-27 17:43:09.421] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 3544ef5c-a685-4831-bc56-18c768a33b2a complete' }
+[32m[2017-06-27 17:43:11.678] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx b1a8ec36-918d-42fa-b78d-1c830a906b8b complete' }
+[32m[2017-06-27 17:45:09.430] [INFO] console - [39mdata in id:94775
+[32m[2017-06-27 17:45:09.431] [INFO] console - [39mdata in name:risabh
+[32m[2017-06-27 17:45:09.431] [INFO] console - [39mdata in email:risabh@rpqb.com
+[32m[2017-06-27 17:45:09.431] [INFO] console - [39mdata in phone:12344567890
+[32m[2017-06-27 17:45:09.431] [INFO] console - [39mdata in pan:pan12345
+[32m[2017-06-27 17:45:09.431] [INFO] console - [39mdata in aadhar:123423513256
+[32m[2017-06-27 17:45:09.432] [INFO] console - [39mdata in usertype:lender
+[32m[2017-06-27 17:45:09.432] [INFO] console - [39mdata in upi:upi@1324231
+[32m[2017-06-27 17:45:09.432] [INFO] console - [39mdata in passpin:123456
+[32m[2017-06-27 17:45:09.434] [INFO] console - [39mregister object[object Object]
+[32m[2017-06-27 17:45:09.434] [INFO] console - [39mENTERING THE Userregisteration from register.js to blockchainSdk
+[32m[2017-06-27 17:45:09.436] [INFO] console - [39mcalling SDK for registration
+[34m[2017-06-27 17:45:09.436] [TRACE] blockchain_sdk - [39mUserRegisteration : entry 
+[34m[2017-06-27 17:45:09.436] [TRACE] blockchain_sdk - [39mUserRegisteration : params - {"user":"risabh.s","UserDetails":{"id":"94775","name":"risabh","email":"risabh@rpqb.com","phone":"12344567890","pan":"pan12345","aadhar":"123423513256","usertype":"lender","upi":"upi@1324231","passpin":"123456"}} 
+[34m[2017-06-27 17:45:09.437] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 17:45:09.437] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["94775","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-06-27 17:45:10.219] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["94775","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]}
+[32m[2017-06-27 17:45:10.220] [INFO] blockchain_sdk - [39mUserRegisteration : Successfully registered user - EventInvokeSubmitted { uuid: '2c1556d8-0617-484c-80a9-269104797ebe' }
+[32m[2017-06-27 17:45:14.455] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 2c1556d8-0617-484c-80a9-269104797ebe complete' }
+[32m[2017-06-27 17:46:12.802] [INFO] console - [39mdata in id:90062
+[32m[2017-06-27 17:46:12.802] [INFO] console - [39mdata in name:risabh
+[32m[2017-06-27 17:46:12.803] [INFO] console - [39mdata in email:risabh@rpqb.com
+[32m[2017-06-27 17:46:12.803] [INFO] console - [39mdata in phone:12344567890
+[32m[2017-06-27 17:46:12.805] [INFO] console - [39mdata in pan:pan12345
+[32m[2017-06-27 17:46:12.805] [INFO] console - [39mdata in aadhar:123423513256
+[32m[2017-06-27 17:46:12.805] [INFO] console - [39mdata in usertype:lender
+[32m[2017-06-27 17:46:12.805] [INFO] console - [39mdata in upi:upi@1324231
+[32m[2017-06-27 17:46:12.805] [INFO] console - [39mdata in passpin:123456
+[32m[2017-06-27 17:46:12.805] [INFO] console - [39mregister object[object Object]
+[32m[2017-06-27 17:46:12.806] [INFO] console - [39mENTERING THE Userregisteration from register.js to blockchainSdk
+[32m[2017-06-27 17:46:12.807] [INFO] console - [39mcalling SDK for registration
+[34m[2017-06-27 17:46:12.807] [TRACE] blockchain_sdk - [39mUserRegisteration : entry 
+[34m[2017-06-27 17:46:12.807] [TRACE] blockchain_sdk - [39mUserRegisteration : params - {"user":"risabh.s","UserDetails":{"id":"90062","name":"risabh","email":"risabh@rpqb.com","phone":"12344567890","pan":"pan12345","aadhar":"123423513256","usertype":"lender","upi":"upi@1324231","passpin":"123456"}} 
+[34m[2017-06-27 17:46:12.808] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 17:46:12.808] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["90062","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-06-27 17:46:13.353] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["90062","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]}
+[32m[2017-06-27 17:46:13.354] [INFO] blockchain_sdk - [39mUserRegisteration : Successfully registered user - EventInvokeSubmitted { uuid: 'd7e8b23c-d0eb-48dc-99c8-62081a4ad85c' }
+[32m[2017-06-27 17:46:17.822] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx d7e8b23c-d0eb-48dc-99c8-62081a4ad85c complete' }
+[32m[2017-06-27 17:46:59.090] [INFO] console - [39mdata in id:9148
+[32m[2017-06-27 17:46:59.090] [INFO] console - [39mdata in name:risabh
+[32m[2017-06-27 17:46:59.090] [INFO] console - [39mdata in email:risabh@rpqb.com
+[32m[2017-06-27 17:46:59.091] [INFO] console - [39mdata in phone:12344567890
+[32m[2017-06-27 17:46:59.091] [INFO] console - [39mdata in pan:pan12345
+[32m[2017-06-27 17:46:59.091] [INFO] console - [39mdata in aadhar:123423513256
+[32m[2017-06-27 17:46:59.091] [INFO] console - [39mdata in usertype:lender
+[32m[2017-06-27 17:46:59.091] [INFO] console - [39mdata in upi:upi@1324231
+[32m[2017-06-27 17:46:59.092] [INFO] console - [39mdata in passpin:123456
+[32m[2017-06-27 17:46:59.092] [INFO] console - [39mregister object[object Object]
+[32m[2017-06-27 17:46:59.092] [INFO] console - [39mENTERING THE Userregisteration from register.js to blockchainSdk
+[32m[2017-06-27 17:46:59.092] [INFO] console - [39mcalling SDK for registration
+[34m[2017-06-27 17:46:59.092] [TRACE] blockchain_sdk - [39mUserRegisteration : entry 
+[34m[2017-06-27 17:46:59.092] [TRACE] blockchain_sdk - [39mUserRegisteration : params - {"user":"risabh.s","UserDetails":{"id":"9148","name":"risabh","email":"risabh@rpqb.com","phone":"12344567890","pan":"pan12345","aadhar":"123423513256","usertype":"lender","upi":"upi@1324231","passpin":"123456"}} 
+[34m[2017-06-27 17:46:59.093] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 17:46:59.093] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["9148","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-06-27 17:46:59.590] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["9148","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]}
+[32m[2017-06-27 17:46:59.591] [INFO] blockchain_sdk - [39mUserRegisteration : Successfully registered user - EventInvokeSubmitted { uuid: 'da45dd3c-88f7-458d-be00-aec412eb0a3d' }
+[32m[2017-06-27 17:47:04.110] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx da45dd3c-88f7-458d-be00-aec412eb0a3d complete' }
+[32m[2017-06-27 17:47:23.414] [INFO] console - [39mdata in id:42748
+[32m[2017-06-27 17:47:23.414] [INFO] console - [39mdata in name:risabh
+[32m[2017-06-27 17:47:23.415] [INFO] console - [39mdata in email:risabh@rpqb.com
+[32m[2017-06-27 17:47:23.415] [INFO] console - [39mdata in phone:12344567890
+[32m[2017-06-27 17:47:23.415] [INFO] console - [39mdata in pan:pan12345
+[32m[2017-06-27 17:47:23.415] [INFO] console - [39mdata in aadhar:123423513256
+[32m[2017-06-27 17:47:23.415] [INFO] console - [39mdata in usertype:lender
+[32m[2017-06-27 17:47:23.415] [INFO] console - [39mdata in upi:upi@1324231
+[32m[2017-06-27 17:47:23.415] [INFO] console - [39mdata in passpin:123456
+[32m[2017-06-27 17:47:23.416] [INFO] console - [39mregister object[object Object]
+[32m[2017-06-27 17:47:23.416] [INFO] console - [39mENTERING THE Userregisteration from register.js to blockchainSdk
+[32m[2017-06-27 17:47:23.416] [INFO] console - [39mcalling SDK for registration
+[34m[2017-06-27 17:47:23.417] [TRACE] blockchain_sdk - [39mUserRegisteration : entry 
+[34m[2017-06-27 17:47:23.417] [TRACE] blockchain_sdk - [39mUserRegisteration : params - {"user":"risabh.s","UserDetails":{"id":"42748","name":"risabh","email":"risabh@rpqb.com","phone":"12344567890","pan":"pan12345","aadhar":"123423513256","usertype":"lender","upi":"upi@1324231","passpin":"123456"}} 
+[34m[2017-06-27 17:47:23.417] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 17:47:23.418] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["42748","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-06-27 17:47:23.944] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["42748","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]}
+[32m[2017-06-27 17:47:23.945] [INFO] blockchain_sdk - [39mUserRegisteration : Successfully registered user - EventInvokeSubmitted { uuid: 'eab3532c-4958-4f74-b40c-8c6770436b67' }
+[32m[2017-06-27 17:47:28.429] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx eab3532c-4958-4f74-b40c-8c6770436b67 complete' }
+[32m[2017-06-27 17:47:53.352] [INFO] console - [39mdata in id:82431
+[32m[2017-06-27 17:47:53.352] [INFO] console - [39mdata in name:risabh
+[32m[2017-06-27 17:47:53.352] [INFO] console - [39mdata in email:risabh@rpqb.com
+[32m[2017-06-27 17:47:53.352] [INFO] console - [39mdata in phone:12344567890
+[32m[2017-06-27 17:47:53.353] [INFO] console - [39mdata in pan:pan12345
+[32m[2017-06-27 17:47:53.353] [INFO] console - [39mdata in aadhar:123423513256
+[32m[2017-06-27 17:47:53.353] [INFO] console - [39mdata in usertype:lender
+[32m[2017-06-27 17:47:53.353] [INFO] console - [39mdata in upi:upi@1324231
+[32m[2017-06-27 17:47:53.353] [INFO] console - [39mdata in passpin:123456
+[32m[2017-06-27 17:47:53.353] [INFO] console - [39mregister object[object Object]
+[32m[2017-06-27 17:47:53.353] [INFO] console - [39mENTERING THE Userregisteration from register.js to blockchainSdk
+[32m[2017-06-27 17:47:53.353] [INFO] console - [39mcalling SDK for registration
+[34m[2017-06-27 17:47:53.354] [TRACE] blockchain_sdk - [39mUserRegisteration : entry 
+[34m[2017-06-27 17:47:53.354] [TRACE] blockchain_sdk - [39mUserRegisteration : params - {"user":"risabh.s","UserDetails":{"id":"82431","name":"risabh","email":"risabh@rpqb.com","phone":"12344567890","pan":"pan12345","aadhar":"123423513256","usertype":"lender","upi":"upi@1324231","passpin":"123456"}} 
+[34m[2017-06-27 17:47:53.354] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 17:47:53.354] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["82431","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-06-27 17:47:53.858] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["82431","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]}
+[32m[2017-06-27 17:47:53.860] [INFO] blockchain_sdk - [39mUserRegisteration : Successfully registered user - EventInvokeSubmitted { uuid: '7aef334d-bf62-476c-837e-d56a4d649883' }
+[32m[2017-06-27 17:47:58.364] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 7aef334d-bf62-476c-837e-d56a4d649883 complete' }
+[32m[2017-06-27 17:48:29.518] [INFO] console - [39mdata in id:55241
+[32m[2017-06-27 17:48:29.518] [INFO] console - [39mdata in name:risabh
+[32m[2017-06-27 17:48:29.518] [INFO] console - [39mdata in email:risabh@rpqb.com
+[32m[2017-06-27 17:48:29.518] [INFO] console - [39mdata in phone:12344567890
+[32m[2017-06-27 17:48:29.518] [INFO] console - [39mdata in pan:pan12345
+[32m[2017-06-27 17:48:29.519] [INFO] console - [39mdata in aadhar:123423513256
+[32m[2017-06-27 17:48:29.519] [INFO] console - [39mdata in usertype:lender
+[32m[2017-06-27 17:48:29.520] [INFO] console - [39mdata in upi:upi@1324231
+[32m[2017-06-27 17:48:29.520] [INFO] console - [39mdata in passpin:123456
+[32m[2017-06-27 17:48:29.523] [INFO] console - [39mregister object[object Object]
+[32m[2017-06-27 17:48:29.526] [INFO] console - [39mENTERING THE Userregisteration from register.js to blockchainSdk
+[32m[2017-06-27 17:48:29.527] [INFO] console - [39mcalling SDK for registration
+[34m[2017-06-27 17:48:29.527] [TRACE] blockchain_sdk - [39mUserRegisteration : entry 
+[34m[2017-06-27 17:48:29.527] [TRACE] blockchain_sdk - [39mUserRegisteration : params - {"user":"risabh.s","UserDetails":{"id":"55241","name":"risabh","email":"risabh@rpqb.com","phone":"12344567890","pan":"pan12345","aadhar":"123423513256","usertype":"lender","upi":"upi@1324231","passpin":"123456"}} 
+[34m[2017-06-27 17:48:29.527] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 17:48:29.527] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["55241","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-06-27 17:48:30.072] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["55241","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]}
+[32m[2017-06-27 17:48:30.075] [INFO] blockchain_sdk - [39mUserRegisteration : Successfully registered user - EventInvokeSubmitted { uuid: '3dee4790-2f3e-4119-9dd4-c6d34f8ae22d' }
+[32m[2017-06-27 17:48:34.548] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 3dee4790-2f3e-4119-9dd4-c6d34f8ae22d complete' }
+[32m[2017-06-27 17:49:15.390] [INFO] console - [39mdata in id:81736
+[32m[2017-06-27 17:49:15.390] [INFO] console - [39mdata in name:risabh
+[32m[2017-06-27 17:49:15.390] [INFO] console - [39mdata in email:risabh@rpqb.com
+[32m[2017-06-27 17:49:15.390] [INFO] console - [39mdata in phone:12344567890
+[32m[2017-06-27 17:49:15.391] [INFO] console - [39mdata in pan:pan12345
+[32m[2017-06-27 17:49:15.391] [INFO] console - [39mdata in aadhar:123423513256
+[32m[2017-06-27 17:49:15.391] [INFO] console - [39mdata in usertype:lender
+[32m[2017-06-27 17:49:15.391] [INFO] console - [39mdata in upi:upi@1324231
+[32m[2017-06-27 17:49:15.391] [INFO] console - [39mdata in passpin:123456
+[32m[2017-06-27 17:49:15.391] [INFO] console - [39mregister object[object Object]
+[32m[2017-06-27 17:49:15.392] [INFO] console - [39mENTERING THE Userregisteration from register.js to blockchainSdk
+[32m[2017-06-27 17:49:15.392] [INFO] console - [39mcalling SDK for registration
+[34m[2017-06-27 17:49:15.393] [TRACE] blockchain_sdk - [39mUserRegisteration : entry 
+[34m[2017-06-27 17:49:15.393] [TRACE] blockchain_sdk - [39mUserRegisteration : params - {"user":"risabh.s","UserDetails":{"id":"81736","name":"risabh","email":"risabh@rpqb.com","phone":"12344567890","pan":"pan12345","aadhar":"123423513256","usertype":"lender","upi":"upi@1324231","passpin":"123456"}} 
+[34m[2017-06-27 17:49:15.394] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 17:49:15.394] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["81736","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-06-27 17:49:15.905] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["81736","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]}
+[32m[2017-06-27 17:49:15.906] [INFO] blockchain_sdk - [39mUserRegisteration : Successfully registered user - EventInvokeSubmitted { uuid: '44fdb586-87d0-458b-9e53-f5fdd6f9041f' }
+[32m[2017-06-27 17:49:20.405] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 44fdb586-87d0-458b-9e53-f5fdd6f9041f complete' }
+[32m[2017-06-27 17:50:13.644] [INFO] console - [39mdata in id:2261
+[32m[2017-06-27 17:50:13.644] [INFO] console - [39mdata in name:risabh
+[32m[2017-06-27 17:50:13.646] [INFO] console - [39mdata in email:risabh@rpqb.com
+[32m[2017-06-27 17:50:13.647] [INFO] console - [39mdata in phone:12344567890
+[32m[2017-06-27 17:50:13.647] [INFO] console - [39mdata in pan:pan12345
+[32m[2017-06-27 17:50:13.647] [INFO] console - [39mdata in aadhar:123423513256
+[32m[2017-06-27 17:50:13.648] [INFO] console - [39mdata in usertype:lender
+[32m[2017-06-27 17:50:13.648] [INFO] console - [39mdata in upi:upi@1324231
+[32m[2017-06-27 17:50:13.648] [INFO] console - [39mdata in passpin:123456
+[32m[2017-06-27 17:50:13.648] [INFO] console - [39mregister object[object Object]
+[32m[2017-06-27 17:50:13.648] [INFO] console - [39mENTERING THE Userregisteration from register.js to blockchainSdk
+[32m[2017-06-27 17:50:13.648] [INFO] console - [39mcalling SDK for registration
+[34m[2017-06-27 17:50:13.649] [TRACE] blockchain_sdk - [39mUserRegisteration : entry 
+[34m[2017-06-27 17:50:13.649] [TRACE] blockchain_sdk - [39mUserRegisteration : params - {"user":"risabh.s","UserDetails":{"id":"2261","name":"risabh","email":"risabh@rpqb.com","phone":"12344567890","pan":"pan12345","aadhar":"123423513256","usertype":"lender","upi":"upi@1324231","passpin":"123456"}} 
+[34m[2017-06-27 17:50:13.649] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 17:50:13.649] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["2261","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-06-27 17:50:14.167] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["2261","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]}
+[32m[2017-06-27 17:50:14.168] [INFO] blockchain_sdk - [39mUserRegisteration : Successfully registered user - EventInvokeSubmitted { uuid: '25e9c9d7-54be-4dee-90cc-e6e1ee803e4f' }
+[32m[2017-06-27 17:50:18.658] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 25e9c9d7-54be-4dee-90cc-e6e1ee803e4f complete' }
+[32m[2017-06-27 17:53:15.403] [INFO] console - [39mdata in id:5388
+[32m[2017-06-27 17:53:15.403] [INFO] console - [39mdata in name:risabh
+[32m[2017-06-27 17:53:15.404] [INFO] console - [39mdata in email:risabh@rpqb.com
+[32m[2017-06-27 17:53:15.404] [INFO] console - [39mdata in phone:12344567890
+[32m[2017-06-27 17:53:15.404] [INFO] console - [39mdata in pan:pan12345
+[32m[2017-06-27 17:53:15.404] [INFO] console - [39mdata in aadhar:123423513256
+[32m[2017-06-27 17:53:15.404] [INFO] console - [39mdata in usertype:lender
+[32m[2017-06-27 17:53:15.404] [INFO] console - [39mdata in upi:upi@1324231
+[32m[2017-06-27 17:53:15.404] [INFO] console - [39mdata in passpin:123456
+[32m[2017-06-27 17:53:15.404] [INFO] console - [39mregister object[object Object]
+[32m[2017-06-27 17:53:15.405] [INFO] console - [39mENTERING THE Userregisteration from register.js to blockchainSdk
+[32m[2017-06-27 17:53:15.405] [INFO] console - [39mcalling SDK for registration
+[34m[2017-06-27 17:53:15.405] [TRACE] blockchain_sdk - [39mUserRegisteration : entry 
+[34m[2017-06-27 17:53:15.405] [TRACE] blockchain_sdk - [39mUserRegisteration : params - {"user":"risabh.s","UserDetails":{"id":"5388","name":"risabh","email":"risabh@rpqb.com","phone":"12344567890","pan":"pan12345","aadhar":"123423513256","usertype":"lender","upi":"upi@1324231","passpin":"123456"}} 
+[34m[2017-06-27 17:53:15.405] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 17:53:15.405] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["5388","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-06-27 17:53:15.950] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["5388","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]}
+[32m[2017-06-27 17:53:15.951] [INFO] blockchain_sdk - [39mUserRegisteration : Successfully registered user - EventInvokeSubmitted { uuid: '3796431d-4882-46eb-889b-7edc38b83235' }
+[32m[2017-06-27 17:53:20.415] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 3796431d-4882-46eb-889b-7edc38b83235 complete' }
+[32m[2017-06-27 17:53:36.243] [INFO] console - [39mdata in id:20244
+[32m[2017-06-27 17:53:36.243] [INFO] console - [39mdata in name:risabh
+[32m[2017-06-27 17:53:36.243] [INFO] console - [39mdata in email:risabh@rpqb.com
+[32m[2017-06-27 17:53:36.243] [INFO] console - [39mdata in phone:12344567890
+[32m[2017-06-27 17:53:36.243] [INFO] console - [39mdata in pan:pan12345
+[32m[2017-06-27 17:53:36.244] [INFO] console - [39mdata in aadhar:123423513256
+[32m[2017-06-27 17:53:36.244] [INFO] console - [39mdata in usertype:lender
+[32m[2017-06-27 17:53:36.244] [INFO] console - [39mdata in upi:upi@1324231
+[32m[2017-06-27 17:53:36.244] [INFO] console - [39mdata in passpin:123456
+[32m[2017-06-27 17:53:36.246] [INFO] console - [39mregister object[object Object]
+[32m[2017-06-27 17:53:36.246] [INFO] console - [39mENTERING THE Userregisteration from register.js to blockchainSdk
+[32m[2017-06-27 17:53:36.247] [INFO] console - [39mcalling SDK for registration
+[34m[2017-06-27 17:53:36.247] [TRACE] blockchain_sdk - [39mUserRegisteration : entry 
+[34m[2017-06-27 17:53:36.247] [TRACE] blockchain_sdk - [39mUserRegisteration : params - {"user":"risabh.s","UserDetails":{"id":"20244","name":"risabh","email":"risabh@rpqb.com","phone":"12344567890","pan":"pan12345","aadhar":"123423513256","usertype":"lender","upi":"upi@1324231","passpin":"123456"}} 
+[34m[2017-06-27 17:53:36.247] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 17:53:36.247] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["20244","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-06-27 17:53:36.736] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["20244","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]}
+[32m[2017-06-27 17:53:36.737] [INFO] blockchain_sdk - [39mUserRegisteration : Successfully registered user - EventInvokeSubmitted { uuid: '122eed21-ff75-444b-b456-36fafd2c35ef' }
+[32m[2017-06-27 17:53:41.255] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 122eed21-ff75-444b-b456-36fafd2c35ef complete' }
+[32m[2017-06-27 17:56:46.632] [INFO] console - [39mdata in id:7645
+[32m[2017-06-27 17:56:46.633] [INFO] console - [39mdata in name:risabh
+[32m[2017-06-27 17:56:46.633] [INFO] console - [39mdata in email:risabh@rpqb.com
+[32m[2017-06-27 17:56:46.633] [INFO] console - [39mdata in phone:12344567890
+[32m[2017-06-27 17:56:46.633] [INFO] console - [39mdata in pan:pan12345
+[32m[2017-06-27 17:56:46.633] [INFO] console - [39mdata in aadhar:123423513256
+[32m[2017-06-27 17:56:46.634] [INFO] console - [39mdata in usertype:lender
+[32m[2017-06-27 17:56:46.634] [INFO] console - [39mdata in upi:upi@1324231
+[32m[2017-06-27 17:56:46.634] [INFO] console - [39mdata in passpin:123456
+[32m[2017-06-27 17:56:46.637] [INFO] console - [39mregister object[object Object]
+[32m[2017-06-27 17:56:46.637] [INFO] console - [39mENTERING THE Userregisteration from register.js to blockchainSdk
+[32m[2017-06-27 17:56:46.637] [INFO] console - [39mcalling SDK for registration
+[34m[2017-06-27 17:56:46.637] [TRACE] blockchain_sdk - [39mUserRegisteration : entry 
+[34m[2017-06-27 17:56:46.637] [TRACE] blockchain_sdk - [39mUserRegisteration : params - {"user":"risabh.s","UserDetails":{"id":"7645","name":"risabh","email":"risabh@rpqb.com","phone":"12344567890","pan":"pan12345","aadhar":"123423513256","usertype":"lender","upi":"upi@1324231","passpin":"123456"}} 
+[34m[2017-06-27 17:56:46.638] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 17:56:46.638] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["7645","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-06-27 17:56:47.227] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["7645","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]}
+[32m[2017-06-27 17:56:47.229] [INFO] blockchain_sdk - [39mUserRegisteration : Successfully registered user - EventInvokeSubmitted { uuid: '000d4220-61ff-4dc8-b22e-bfd84ba824e0' }
+[32m[2017-06-27 17:56:51.646] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 000d4220-61ff-4dc8-b22e-bfd84ba824e0 complete' }
+[32m[2017-06-27 18:00:19.208] [INFO] console - [39mdata in id:82895
+[32m[2017-06-27 18:00:19.208] [INFO] console - [39mdata in name:risabh
+[32m[2017-06-27 18:00:19.209] [INFO] console - [39mdata in email:risabh@rpqb.com
+[32m[2017-06-27 18:00:19.209] [INFO] console - [39mdata in phone:12344567890
+[32m[2017-06-27 18:00:19.210] [INFO] console - [39mdata in pan:pan12345
+[32m[2017-06-27 18:00:19.210] [INFO] console - [39mdata in aadhar:123423513256
+[32m[2017-06-27 18:00:19.210] [INFO] console - [39mdata in usertype:lender
+[32m[2017-06-27 18:00:19.210] [INFO] console - [39mdata in upi:upi@1324231
+[32m[2017-06-27 18:00:19.210] [INFO] console - [39mdata in passpin:123456
+[32m[2017-06-27 18:00:19.210] [INFO] console - [39mregister object[object Object]
+[32m[2017-06-27 18:00:19.211] [INFO] console - [39mENTERING THE Userregisteration from register.js to blockchainSdk
+[32m[2017-06-27 18:00:19.211] [INFO] console - [39mcalling SDK for registration
+[34m[2017-06-27 18:00:19.211] [TRACE] blockchain_sdk - [39mUserRegisteration : entry 
+[34m[2017-06-27 18:00:19.211] [TRACE] blockchain_sdk - [39mUserRegisteration : params - {"user":"risabh.s","UserDetails":{"id":"82895","name":"risabh","email":"risabh@rpqb.com","phone":"12344567890","pan":"pan12345","aadhar":"123423513256","usertype":"lender","upi":"upi@1324231","passpin":"123456"}} 
+[34m[2017-06-27 18:00:19.211] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 18:00:19.211] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["82895","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-06-27 18:00:19.949] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["82895","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]}
+[32m[2017-06-27 18:00:19.951] [INFO] blockchain_sdk - [39mUserRegisteration : Successfully registered user - EventInvokeSubmitted { uuid: 'e5572326-e238-4aa6-af01-b01210959f45' }
+[32m[2017-06-27 18:00:24.228] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx e5572326-e238-4aa6-af01-b01210959f45 complete' }
+[32m[2017-06-27 18:04:49.014] [INFO] console - [39mdata in id:51658
+[32m[2017-06-27 18:04:49.014] [INFO] console - [39mdata in name:risabh
+[32m[2017-06-27 18:04:49.015] [INFO] console - [39mdata in email:risabh@rpqb.com
+[32m[2017-06-27 18:04:49.016] [INFO] console - [39mdata in phone:12344567890
+[32m[2017-06-27 18:04:49.016] [INFO] console - [39mdata in pan:pan12345
+[32m[2017-06-27 18:04:49.016] [INFO] console - [39mdata in aadhar:123423513256
+[32m[2017-06-27 18:04:49.016] [INFO] console - [39mdata in usertype:lender
+[32m[2017-06-27 18:04:49.016] [INFO] console - [39mdata in upi:upi@1324231
+[32m[2017-06-27 18:04:49.016] [INFO] console - [39mdata in passpin:123456
+[32m[2017-06-27 18:04:49.016] [INFO] console - [39mregister object[object Object]
+[32m[2017-06-27 18:04:49.016] [INFO] console - [39mENTERING THE Userregisteration from register.js to blockchainSdk
+[32m[2017-06-27 18:04:49.016] [INFO] console - [39mcalling SDK for registration
+[34m[2017-06-27 18:04:49.017] [TRACE] blockchain_sdk - [39mUserRegisteration : entry 
+[34m[2017-06-27 18:04:49.017] [TRACE] blockchain_sdk - [39mUserRegisteration : params - {"user":"risabh.s","UserDetails":{"id":"51658","name":"risabh","email":"risabh@rpqb.com","phone":"12344567890","pan":"pan12345","aadhar":"123423513256","usertype":"lender","upi":"upi@1324231","passpin":"123456"}} 
+[34m[2017-06-27 18:04:49.017] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 18:04:49.018] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["51658","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":0} 
+[31m[2017-06-27 18:04:49.288] [ERROR] blockchain_sdk - [39mdoInvoke : Could not perform invoke  - EventTransactionError {  error:    { Error: {"created":"@1498566889.287466806","description":"Secure read failed","file":"../src/core/lib/security/transport/secure_endpoint.c","file_line":157,"grpc_status":14,"referenced_errors":[{"created":"@1498566889.287443365","description":"OS Error","errno":104,"file":"../src/core/lib/iomgr/tcp_posix.c","file_line":229,"os_error":"Connection reset by peer","syscall":"recvmsg"}]}       at /home/risabh/nodeWorkspace/p2plending/p2pnode/node_modules/grpc/src/node/src/client.js:417:17 code: 14, metadata: [Object] },  msg: 'Error: {"created":"@1498566889.287466806","description":"Secure read failed","file":"../src/core/lib/security/transport/secure_endpoint.c","file_line":157,"grpc_status":14,"referenced_errors":[{"created":"@1498566889.287443365","description":"OS Error","errno":104,"file":"../src/core/lib/iomgr/tcp_posix.c","file_line":229,"os_error":"Connection reset by peer","syscall":"recvmsg"}]}' }
+[31m[2017-06-27 18:04:51.289] [ERROR] blockchain_sdk - [39mrecursiveInvoke : Invoke Retry 0 - {"statusCode":500,"body":"Could not perform invoke "}
+[34m[2017-06-27 18:04:51.290] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 18:04:51.290] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["51658","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":1} 
+[32m[2017-06-27 18:04:52.518] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["51658","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]}
+[32m[2017-06-27 18:04:52.519] [INFO] blockchain_sdk - [39mUserRegisteration : Successfully registered user - EventInvokeSubmitted { uuid: 'd93eaa2e-aa28-4d8e-9500-c90ddbbf2fc5' }
+[32m[2017-06-27 18:04:54.033] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 3109fc55-6903-4946-93d5-c91112f9183b complete' }
+[32m[2017-06-27 18:04:56.303] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx d93eaa2e-aa28-4d8e-9500-c90ddbbf2fc5 complete' }
+[32m[2017-06-27 18:05:00.084] [INFO] console - [39mdata in id:84055
+[32m[2017-06-27 18:05:00.084] [INFO] console - [39mdata in name:risabh
+[32m[2017-06-27 18:05:00.084] [INFO] console - [39mdata in email:risabh@rpqb.com
+[32m[2017-06-27 18:05:00.084] [INFO] console - [39mdata in phone:12344567890
+[32m[2017-06-27 18:05:00.084] [INFO] console - [39mdata in pan:pan12345
+[32m[2017-06-27 18:05:00.084] [INFO] console - [39mdata in aadhar:123423513256
+[32m[2017-06-27 18:05:00.085] [INFO] console - [39mdata in usertype:lender
+[32m[2017-06-27 18:05:00.085] [INFO] console - [39mdata in upi:upi@1324231
+[32m[2017-06-27 18:05:00.085] [INFO] console - [39mdata in passpin:123456
+[32m[2017-06-27 18:05:00.085] [INFO] console - [39mregister object[object Object]
+[32m[2017-06-27 18:05:00.085] [INFO] console - [39mENTERING THE Userregisteration from register.js to blockchainSdk
+[32m[2017-06-27 18:05:00.085] [INFO] console - [39mcalling SDK for registration
+[34m[2017-06-27 18:05:00.085] [TRACE] blockchain_sdk - [39mUserRegisteration : entry 
+[34m[2017-06-27 18:05:00.086] [TRACE] blockchain_sdk - [39mUserRegisteration : params - {"user":"risabh.s","UserDetails":{"id":"84055","name":"risabh","email":"risabh@rpqb.com","phone":"12344567890","pan":"pan12345","aadhar":"123423513256","usertype":"lender","upi":"upi@1324231","passpin":"123456"}} 
+[34m[2017-06-27 18:05:00.086] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 18:05:00.086] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["84055","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-06-27 18:05:00.612] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["84055","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]}
+[32m[2017-06-27 18:05:00.613] [INFO] blockchain_sdk - [39mUserRegisteration : Successfully registered user - EventInvokeSubmitted { uuid: '0e13dc62-ee3b-4972-8b15-36322cf6bf0a' }
+[32m[2017-06-27 18:05:04.277] [INFO] console - [39mdata in id:19031
+[32m[2017-06-27 18:05:04.277] [INFO] console - [39mdata in name:risabh
+[32m[2017-06-27 18:05:04.278] [INFO] console - [39mdata in email:risabh@rpqb.com
+[32m[2017-06-27 18:05:04.279] [INFO] console - [39mdata in phone:12344567890
+[32m[2017-06-27 18:05:04.279] [INFO] console - [39mdata in pan:pan12345
+[32m[2017-06-27 18:05:04.279] [INFO] console - [39mdata in aadhar:123423513256
+[32m[2017-06-27 18:05:04.279] [INFO] console - [39mdata in usertype:lender
+[32m[2017-06-27 18:05:04.279] [INFO] console - [39mdata in upi:upi@1324231
+[32m[2017-06-27 18:05:04.279] [INFO] console - [39mdata in passpin:123456
+[32m[2017-06-27 18:05:04.279] [INFO] console - [39mregister object[object Object]
+[32m[2017-06-27 18:05:04.280] [INFO] console - [39mENTERING THE Userregisteration from register.js to blockchainSdk
+[32m[2017-06-27 18:05:04.280] [INFO] console - [39mcalling SDK for registration
+[34m[2017-06-27 18:05:04.280] [TRACE] blockchain_sdk - [39mUserRegisteration : entry 
+[34m[2017-06-27 18:05:04.280] [TRACE] blockchain_sdk - [39mUserRegisteration : params - {"user":"risabh.s","UserDetails":{"id":"19031","name":"risabh","email":"risabh@rpqb.com","phone":"12344567890","pan":"pan12345","aadhar":"123423513256","usertype":"lender","upi":"upi@1324231","passpin":"123456"}} 
+[34m[2017-06-27 18:05:04.280] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 18:05:04.280] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["19031","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":0} 
+[31m[2017-06-27 18:05:04.360] [ERROR] blockchain_sdk - [39mdoInvoke : Could not perform invoke  - EventTransactionError {  error: 'None of 4 peers reponding',  msg: 'None of 4 peers reponding' }
+[32m[2017-06-27 18:14:29.687] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 0e13dc62-ee3b-4972-8b15-36322cf6bf0a complete' }
+[31m[2017-06-27 18:14:29.828] [ERROR] blockchain_sdk - [39mrecursiveInvoke : Invoke Retry 0 - {"statusCode":500,"body":"Could not perform invoke "}
+[34m[2017-06-27 18:14:29.829] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 18:14:29.829] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["19031","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":1} 
+[31m[2017-06-27 18:14:29.848] [ERROR] blockchain_sdk - [39mdoInvoke : Could not perform invoke  - EventTransactionError {  error: 'None of 4 peers reponding',  msg: 'None of 4 peers reponding' }
+[31m[2017-06-27 18:14:31.849] [ERROR] blockchain_sdk - [39mrecursiveInvoke : Invoke Retry 1 - {"statusCode":500,"body":"Could not perform invoke "}
+[34m[2017-06-27 18:14:31.850] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 18:14:31.850] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["19031","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":2} 
+[31m[2017-06-27 18:14:32.483] [ERROR] blockchain_sdk - [39mdoInvoke : Could not perform invoke  - EventTransactionError {  error: 'None of 4 peers reponding',  msg: 'None of 4 peers reponding' }
+[32m[2017-06-27 18:14:32.759] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx f78d8d52-06de-432b-98b2-60cd0ed1dae5 complete' }
+[31m[2017-06-27 18:14:34.485] [ERROR] blockchain_sdk - [39mrecursiveInvoke : Invoke Retry 2 - {"statusCode":500,"body":"Could not perform invoke "}
+[34m[2017-06-27 18:14:34.487] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 18:14:34.487] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["19031","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":3} 
+[31m[2017-06-27 18:14:34.520] [ERROR] blockchain_sdk - [39mdoInvoke : Could not perform invoke  - EventTransactionError {  error: 'None of 4 peers reponding',  msg: 'None of 4 peers reponding' }
+[32m[2017-06-27 18:14:34.836] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 69386ec1-2aa0-4968-a674-a93c572c420e complete' }
+[31m[2017-06-27 18:14:36.522] [ERROR] blockchain_sdk - [39mrecursiveInvoke : Invoke Retry 3 - {"statusCode":500,"body":"Could not perform invoke "}
+[34m[2017-06-27 18:14:36.523] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 18:14:36.523] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["19031","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":4} 
+[32m[2017-06-27 18:14:36.857] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 91d62fd7-b4bf-4227-9bc1-7292e83e2d7c complete' }
+[31m[2017-06-27 18:14:36.898] [ERROR] blockchain_sdk - [39mdoInvoke : Could not perform invoke  - EventTransactionError {  error: 'None of 4 peers reponding',  msg: 'None of 4 peers reponding' }
+[31m[2017-06-27 18:14:38.899] [ERROR] blockchain_sdk - [39mrecursiveInvoke : Invoke Retry 4 - {"statusCode":500,"body":"Could not perform invoke "}
+[34m[2017-06-27 18:14:38.900] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 18:14:38.900] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["19031","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":5} 
+[32m[2017-06-27 18:14:39.509] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx b662cdd1-4aab-42b4-aed9-0d5f151f2d96 complete' }
+[32m[2017-06-27 18:14:41.536] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 59176185-09ab-4487-ad22-08fa017f998a complete' }
+[32m[2017-06-27 18:14:43.912] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx d65311cd-7807-4bc1-8af4-5ca41264947b complete' }
+[32m[2017-06-27 18:14:45.729] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["19031","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]}
+[32m[2017-06-27 18:14:45.730] [INFO] blockchain_sdk - [39mUserRegisteration : Successfully registered user - EventInvokeSubmitted { uuid: 'd65311cd-7807-4bc1-8af4-5ca41264947b' }
+[32m[2017-06-27 18:51:33.956] [INFO] console - [39mdata in id:79269
+[32m[2017-06-27 18:51:33.956] [INFO] console - [39mdata in name:risabh
+[32m[2017-06-27 18:51:33.958] [INFO] console - [39mdata in email:risabh@rpqb.com
+[32m[2017-06-27 18:51:33.958] [INFO] console - [39mdata in phone:12344567890
+[32m[2017-06-27 18:51:33.958] [INFO] console - [39mdata in pan:pan12345
+[32m[2017-06-27 18:51:33.958] [INFO] console - [39mdata in aadhar:123423513256
+[32m[2017-06-27 18:51:33.958] [INFO] console - [39mdata in usertype:lender
+[32m[2017-06-27 18:51:33.958] [INFO] console - [39mdata in upi:upi@1324231
+[32m[2017-06-27 18:51:33.959] [INFO] console - [39mdata in passpin:123456
+[32m[2017-06-27 18:51:33.959] [INFO] console - [39mregister object[object Object]
+[32m[2017-06-27 18:51:33.959] [INFO] console - [39mENTERING THE Userregisteration from register.js to blockchainSdk
+[32m[2017-06-27 18:51:33.959] [INFO] console - [39mcalling SDK for registration
+[34m[2017-06-27 18:51:33.960] [TRACE] blockchain_sdk - [39mUserRegisteration : entry 
+[34m[2017-06-27 18:51:33.960] [TRACE] blockchain_sdk - [39mUserRegisteration : params - {"user":"risabh.s","UserDetails":{"id":"79269","name":"risabh","email":"risabh@rpqb.com","phone":"12344567890","pan":"pan12345","aadhar":"123423513256","usertype":"lender","upi":"upi@1324231","passpin":"123456"}} 
+[34m[2017-06-27 18:51:33.960] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 18:51:33.961] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["79269","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":0} 
+[31m[2017-06-27 18:51:34.789] [ERROR] blockchain_sdk - [39mdoInvoke : Could not perform invoke  - EventTransactionError {  error:    { Error: {"created":"@1498569694.788791855","description":"Secure read failed","file":"../src/core/lib/security/transport/secure_endpoint.c","file_line":157,"grpc_status":14,"referenced_errors":[{"created":"@1498569694.788777922","description":"OS Error","errno":104,"file":"../src/core/lib/iomgr/tcp_posix.c","file_line":229,"os_error":"Connection reset by peer","syscall":"recvmsg"}]}       at /home/risabh/nodeWorkspace/p2plending/p2pnode/node_modules/grpc/src/node/src/client.js:417:17 code: 14, metadata: [Object] },  msg: 'Error: {"created":"@1498569694.788791855","description":"Secure read failed","file":"../src/core/lib/security/transport/secure_endpoint.c","file_line":157,"grpc_status":14,"referenced_errors":[{"created":"@1498569694.788777922","description":"OS Error","errno":104,"file":"../src/core/lib/iomgr/tcp_posix.c","file_line":229,"os_error":"Connection reset by peer","syscall":"recvmsg"}]}' }
+[31m[2017-06-27 18:51:36.791] [ERROR] blockchain_sdk - [39mrecursiveInvoke : Invoke Retry 0 - {"statusCode":500,"body":"Could not perform invoke "}
+[34m[2017-06-27 18:51:36.791] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 18:51:36.791] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["79269","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":1} 
+[32m[2017-06-27 18:51:38.316] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["79269","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]}
+[32m[2017-06-27 18:51:38.320] [INFO] blockchain_sdk - [39mUserRegisteration : Successfully registered user - EventInvokeSubmitted { uuid: '1ad29272-18a6-4eec-b565-4e9dc05b5760' }
+[32m[2017-06-27 18:51:38.974] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 77ba58f7-46d9-4a1f-80df-7761bcadbe6d complete' }
+[32m[2017-06-27 18:51:41.802] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 1ad29272-18a6-4eec-b565-4e9dc05b5760 complete' }
+[32m[2017-06-27 19:15:41.103] [INFO] console - [39mdata in id:36841
+[32m[2017-06-27 19:15:41.103] [INFO] console - [39mdata in name:risabh
+[32m[2017-06-27 19:15:41.103] [INFO] console - [39mdata in email:risabh@rpqb.com
+[32m[2017-06-27 19:15:41.104] [INFO] console - [39mdata in phone:12344567890
+[32m[2017-06-27 19:15:41.104] [INFO] console - [39mdata in pan:pan12345
+[32m[2017-06-27 19:15:41.104] [INFO] console - [39mdata in aadhar:123423513256
+[32m[2017-06-27 19:15:41.105] [INFO] console - [39mdata in usertype:lender
+[32m[2017-06-27 19:15:41.105] [INFO] console - [39mdata in upi:upi@1324231
+[32m[2017-06-27 19:15:41.105] [INFO] console - [39mdata in passpin:123456
+[32m[2017-06-27 19:15:41.105] [INFO] console - [39mregister object[object Object]
+[32m[2017-06-27 19:15:41.105] [INFO] console - [39mENTERING THE Userregisteration from register.js to blockchainSdk
+[32m[2017-06-27 19:15:41.105] [INFO] console - [39mcalling SDK for registration
+[34m[2017-06-27 19:15:41.105] [TRACE] blockchain_sdk - [39mUserRegisteration : entry 
+[34m[2017-06-27 19:15:41.106] [TRACE] blockchain_sdk - [39mUserRegisteration : params - {"user":"risabh.s","UserDetails":{"id":"36841","name":"risabh","email":"risabh@rpqb.com","phone":"12344567890","pan":"pan12345","aadhar":"123423513256","usertype":"lender","upi":"upi@1324231","passpin":"123456"}} 
+[34m[2017-06-27 19:15:41.106] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 19:15:41.106] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["36841","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":0} 
+[31m[2017-06-27 19:15:41.603] [ERROR] blockchain_sdk - [39mdoInvoke : Could not perform invoke  - EventTransactionError {  error:    { Error: {"created":"@1498571141.602522651","description":"Secure read failed","file":"../src/core/lib/security/transport/secure_endpoint.c","file_line":157,"grpc_status":14,"referenced_errors":[{"created":"@1498571141.602490217","description":"OS Error","errno":104,"file":"../src/core/lib/iomgr/tcp_posix.c","file_line":229,"os_error":"Connection reset by peer","syscall":"recvmsg"}]}       at /home/risabh/nodeWorkspace/p2plending/p2pnode/node_modules/grpc/src/node/src/client.js:417:17 code: 14, metadata: [Object] },  msg: 'Error: {"created":"@1498571141.602522651","description":"Secure read failed","file":"../src/core/lib/security/transport/secure_endpoint.c","file_line":157,"grpc_status":14,"referenced_errors":[{"created":"@1498571141.602490217","description":"OS Error","errno":104,"file":"../src/core/lib/iomgr/tcp_posix.c","file_line":229,"os_error":"Connection reset by peer","syscall":"recvmsg"}]}' }
+[31m[2017-06-27 19:15:43.603] [ERROR] blockchain_sdk - [39mrecursiveInvoke : Invoke Retry 0 - {"statusCode":500,"body":"Could not perform invoke "}
+[34m[2017-06-27 19:15:43.604] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 19:15:43.604] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["36841","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":1} 
+[32m[2017-06-27 19:15:45.197] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["36841","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]}
+[32m[2017-06-27 19:15:45.198] [INFO] blockchain_sdk - [39mUserRegisteration : Successfully registered user - EventInvokeSubmitted { uuid: '9680435f-c863-41dd-9ca7-de0af1e0117f' }
+[32m[2017-06-27 19:15:46.129] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 469f48b4-46a3-4f4d-84bc-a79fe4a96df0 complete' }
+[32m[2017-06-27 19:15:48.618] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 9680435f-c863-41dd-9ca7-de0af1e0117f complete' }
+[32m[2017-06-27 19:16:17.857] [INFO] console - [39mdata in id:17664
+[32m[2017-06-27 19:16:17.857] [INFO] console - [39mdata in name:risabh
+[32m[2017-06-27 19:16:17.859] [INFO] console - [39mdata in email:risabh@rpqb.com
+[32m[2017-06-27 19:16:17.861] [INFO] console - [39mdata in phone:12344567890
+[32m[2017-06-27 19:16:17.861] [INFO] console - [39mdata in pan:pan12345
+[32m[2017-06-27 19:16:17.862] [INFO] console - [39mdata in aadhar:123423513256
+[32m[2017-06-27 19:16:17.864] [INFO] console - [39mdata in usertype:lender
+[32m[2017-06-27 19:16:17.864] [INFO] console - [39mdata in upi:upi@1324231
+[32m[2017-06-27 19:16:17.865] [INFO] console - [39mdata in passpin:123456
+[32m[2017-06-27 19:16:17.866] [INFO] console - [39mregister object[object Object]
+[32m[2017-06-27 19:16:17.866] [INFO] console - [39mENTERING THE Userregisteration from register.js to blockchainSdk
+[32m[2017-06-27 19:16:17.866] [INFO] console - [39mcalling SDK for registration
+[34m[2017-06-27 19:16:17.866] [TRACE] blockchain_sdk - [39mUserRegisteration : entry 
+[34m[2017-06-27 19:16:17.866] [TRACE] blockchain_sdk - [39mUserRegisteration : params - {"user":"risabh.s","UserDetails":{"id":"17664","name":"risabh","email":"risabh@rpqb.com","phone":"12344567890","pan":"pan12345","aadhar":"123423513256","usertype":"lender","upi":"upi@1324231","passpin":"123456"}} 
+[34m[2017-06-27 19:16:17.866] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 19:16:17.867] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["17664","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-06-27 19:16:18.478] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["17664","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]}
+[32m[2017-06-27 19:16:18.480] [INFO] blockchain_sdk - [39mUserRegisteration : Successfully registered user - EventInvokeSubmitted { uuid: '7baece9d-504f-4a24-b31b-f5bfbb474172' }
+[32m[2017-06-27 19:16:22.873] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 7baece9d-504f-4a24-b31b-f5bfbb474172 complete' }
+[32m[2017-06-27 19:17:48.334] [INFO] console - [39mdata in id:52897
+[32m[2017-06-27 19:17:48.335] [INFO] console - [39mdata in name:risabh
+[32m[2017-06-27 19:17:48.336] [INFO] console - [39mdata in email:risabh@rpqb.com
+[32m[2017-06-27 19:17:48.336] [INFO] console - [39mdata in phone:12344567890
+[32m[2017-06-27 19:17:48.336] [INFO] console - [39mdata in pan:pan12345
+[32m[2017-06-27 19:17:48.336] [INFO] console - [39mdata in aadhar:123423513256
+[32m[2017-06-27 19:17:48.336] [INFO] console - [39mdata in usertype:lender
+[32m[2017-06-27 19:17:48.337] [INFO] console - [39mdata in upi:upi@1324231
+[32m[2017-06-27 19:17:48.337] [INFO] console - [39mdata in passpin:123456
+[32m[2017-06-27 19:17:48.337] [INFO] console - [39mregister object[object Object]
+[32m[2017-06-27 19:17:48.338] [INFO] console - [39mENTERING THE Userregisteration from register.js to blockchainSdk
+[32m[2017-06-27 19:17:48.338] [INFO] console - [39mcalling SDK for registration
+[34m[2017-06-27 19:17:48.338] [TRACE] blockchain_sdk - [39mUserRegisteration : entry 
+[34m[2017-06-27 19:17:48.339] [TRACE] blockchain_sdk - [39mUserRegisteration : params - {"user":"risabh.s","UserDetails":{"id":"52897","name":"risabh","email":"risabh@rpqb.com","phone":"12344567890","pan":"pan12345","aadhar":"123423513256","usertype":"lender","upi":"upi@1324231","passpin":"123456"}} 
+[34m[2017-06-27 19:17:48.339] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 19:17:48.339] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["52897","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-06-27 19:17:48.918] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["52897","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]}
+[32m[2017-06-27 19:17:48.919] [INFO] blockchain_sdk - [39mUserRegisteration : Successfully registered user - EventInvokeSubmitted { uuid: '67faf382-8c00-474b-9e96-ce99be1bdcb0' }
+[32m[2017-06-27 19:17:53.349] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 67faf382-8c00-474b-9e96-ce99be1bdcb0 complete' }
+[32m[2017-06-27 19:19:33.180] [INFO] console - [39mdata in id:18625
+[32m[2017-06-27 19:19:33.181] [INFO] console - [39mdata in name:risabh
+[32m[2017-06-27 19:19:33.181] [INFO] console - [39mdata in email:risabh@rpqb.com
+[32m[2017-06-27 19:19:33.181] [INFO] console - [39mdata in phone:12344567890
+[32m[2017-06-27 19:19:33.181] [INFO] console - [39mdata in pan:pan12345
+[32m[2017-06-27 19:19:33.181] [INFO] console - [39mdata in aadhar:123423513256
+[32m[2017-06-27 19:19:33.181] [INFO] console - [39mdata in usertype:lender
+[32m[2017-06-27 19:19:33.182] [INFO] console - [39mdata in upi:upi@1324231
+[32m[2017-06-27 19:19:33.182] [INFO] console - [39mdata in passpin:123456
+[32m[2017-06-27 19:19:33.182] [INFO] console - [39mregister object[object Object]
+[32m[2017-06-27 19:19:33.183] [INFO] console - [39mENTERING THE Userregisteration from register.js to blockchainSdk
+[32m[2017-06-27 19:19:33.183] [INFO] console - [39mcalling SDK for registration
+[34m[2017-06-27 19:19:33.183] [TRACE] blockchain_sdk - [39mUserRegisteration : entry 
+[34m[2017-06-27 19:19:33.183] [TRACE] blockchain_sdk - [39mUserRegisteration : params - {"user":"risabh.s","UserDetails":{"id":"18625","name":"risabh","email":"risabh@rpqb.com","phone":"12344567890","pan":"pan12345","aadhar":"123423513256","usertype":"lender","upi":"upi@1324231","passpin":"123456"}} 
+[34m[2017-06-27 19:19:33.184] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 19:19:33.184] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["18625","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-06-27 19:19:33.796] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["18625","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]}
+[32m[2017-06-27 19:19:33.797] [INFO] blockchain_sdk - [39mUserRegisteration : Successfully registered user - EventInvokeSubmitted { uuid: 'c33de595-46cf-45c5-aa95-fe06e2c7f429' }
+[32m[2017-06-27 19:19:38.192] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx c33de595-46cf-45c5-aa95-fe06e2c7f429 complete' }
+[32m[2017-06-27 19:27:01.966] [INFO] console - [39mdata in id:12771
+[32m[2017-06-27 19:27:01.968] [INFO] console - [39mdata in name:risabh
+[32m[2017-06-27 19:27:01.970] [INFO] console - [39mdata in email:risabh@rpqb.com
+[32m[2017-06-27 19:27:01.970] [INFO] console - [39mdata in phone:12344567890
+[32m[2017-06-27 19:27:01.974] [INFO] console - [39mdata in pan:pan12345
+[32m[2017-06-27 19:27:01.974] [INFO] console - [39mdata in aadhar:123423513256
+[32m[2017-06-27 19:27:01.975] [INFO] console - [39mdata in usertype:lender
+[32m[2017-06-27 19:27:01.975] [INFO] console - [39mdata in upi:upi@1324231
+[32m[2017-06-27 19:27:01.975] [INFO] console - [39mdata in passpin:123456
+[32m[2017-06-27 19:27:01.976] [INFO] console - [39mregister object[object Object]
+[32m[2017-06-27 19:27:01.976] [INFO] console - [39mENTERING THE Userregisteration from register.js to blockchainSdk
+[32m[2017-06-27 19:27:01.976] [INFO] console - [39mcalling SDK for registration
+[34m[2017-06-27 19:27:01.976] [TRACE] blockchain_sdk - [39mUserRegisteration : entry 
+[34m[2017-06-27 19:27:01.976] [TRACE] blockchain_sdk - [39mUserRegisteration : params - {"user":"risabh.s","UserDetails":{"id":"12771","name":"risabh","email":"risabh@rpqb.com","phone":"12344567890","pan":"pan12345","aadhar":"123423513256","usertype":"lender","upi":"upi@1324231","passpin":"123456"}} 
+[34m[2017-06-27 19:27:01.976] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 19:27:01.976] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["12771","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":0} 
+[31m[2017-06-27 19:27:02.273] [ERROR] blockchain_sdk - [39mdoInvoke : Could not perform invoke  - EventTransactionError {  error:    { Error: {"created":"@1498571822.271515063","description":"Secure read failed","file":"../src/core/lib/security/transport/secure_endpoint.c","file_line":157,"grpc_status":14,"referenced_errors":[{"created":"@1498571822.271496014","description":"OS Error","errno":104,"file":"../src/core/lib/iomgr/tcp_posix.c","file_line":229,"os_error":"Connection reset by peer","syscall":"recvmsg"}]}       at /home/risabh/nodeWorkspace/p2plending/p2pnode/node_modules/grpc/src/node/src/client.js:417:17 code: 14, metadata: [Object] },  msg: 'Error: {"created":"@1498571822.271515063","description":"Secure read failed","file":"../src/core/lib/security/transport/secure_endpoint.c","file_line":157,"grpc_status":14,"referenced_errors":[{"created":"@1498571822.271496014","description":"OS Error","errno":104,"file":"../src/core/lib/iomgr/tcp_posix.c","file_line":229,"os_error":"Connection reset by peer","syscall":"recvmsg"}]}' }
+[31m[2017-06-27 19:27:04.276] [ERROR] blockchain_sdk - [39mrecursiveInvoke : Invoke Retry 0 - {"statusCode":500,"body":"Could not perform invoke "}
+[34m[2017-06-27 19:27:04.276] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 19:27:04.276] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["12771","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":1} 
+[32m[2017-06-27 19:27:05.741] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["12771","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]}
+[32m[2017-06-27 19:27:05.741] [INFO] blockchain_sdk - [39mUserRegisteration : Successfully registered user - EventInvokeSubmitted { uuid: 'eb1a927a-cd2e-4ba2-807a-3ab09c9ead73' }
+[32m[2017-06-27 19:27:06.987] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 02587dd7-ad2b-4cad-9673-ef3dd921d4a6 complete' }
+[32m[2017-06-27 19:27:09.287] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx eb1a927a-cd2e-4ba2-807a-3ab09c9ead73 complete' }
+[32m[2017-06-27 19:27:19.365] [INFO] console - [39mdata in id:11577
+[32m[2017-06-27 19:27:19.365] [INFO] console - [39mdata in name:risabh
+[32m[2017-06-27 19:27:19.365] [INFO] console - [39mdata in email:risabh@rpqb.com
+[32m[2017-06-27 19:27:19.365] [INFO] console - [39mdata in phone:12344567890
+[32m[2017-06-27 19:27:19.366] [INFO] console - [39mdata in pan:pan12345
+[32m[2017-06-27 19:27:19.366] [INFO] console - [39mdata in aadhar:123423513256
+[32m[2017-06-27 19:27:19.366] [INFO] console - [39mdata in usertype:lender
+[32m[2017-06-27 19:27:19.366] [INFO] console - [39mdata in upi:upi@1324231
+[32m[2017-06-27 19:27:19.366] [INFO] console - [39mdata in passpin:123456
+[32m[2017-06-27 19:27:19.367] [INFO] console - [39mregister object[object Object]
+[32m[2017-06-27 19:27:19.367] [INFO] console - [39mENTERING THE Userregisteration from register.js to blockchainSdk
+[32m[2017-06-27 19:27:19.367] [INFO] console - [39mcalling SDK for registration
+[34m[2017-06-27 19:27:19.367] [TRACE] blockchain_sdk - [39mUserRegisteration : entry 
+[34m[2017-06-27 19:27:19.368] [TRACE] blockchain_sdk - [39mUserRegisteration : params - {"user":"risabh.s","UserDetails":{"id":"11577","name":"risabh","email":"risabh@rpqb.com","phone":"12344567890","pan":"pan12345","aadhar":"123423513256","usertype":"lender","upi":"upi@1324231","passpin":"123456"}} 
+[34m[2017-06-27 19:27:19.368] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 19:27:19.368] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["11577","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-06-27 19:27:19.926] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["11577","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]}
+[32m[2017-06-27 19:27:19.927] [INFO] blockchain_sdk - [39mUserRegisteration : Successfully registered user - EventInvokeSubmitted { uuid: '6c26773e-e29b-4207-b7df-0bea9b442322' }
+[32m[2017-06-27 19:27:24.384] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 6c26773e-e29b-4207-b7df-0bea9b442322 complete' }
+[32m[2017-06-27 19:31:38.731] [INFO] console - [39mdata in id:58631
+[32m[2017-06-27 19:31:38.731] [INFO] console - [39mdata in name:risabh
+[32m[2017-06-27 19:31:38.731] [INFO] console - [39mdata in email:risabh@rpqb.com
+[32m[2017-06-27 19:31:38.732] [INFO] console - [39mdata in phone:12344567890
+[32m[2017-06-27 19:31:38.732] [INFO] console - [39mdata in pan:pan12345
+[32m[2017-06-27 19:31:38.732] [INFO] console - [39mdata in aadhar:123423513256
+[32m[2017-06-27 19:31:38.732] [INFO] console - [39mdata in usertype:lender
+[32m[2017-06-27 19:31:38.732] [INFO] console - [39mdata in upi:upi@1324231
+[32m[2017-06-27 19:31:38.732] [INFO] console - [39mdata in passpin:123456
+[32m[2017-06-27 19:31:38.732] [INFO] console - [39mregister object[object Object]
+[32m[2017-06-27 19:31:38.732] [INFO] console - [39mENTERING THE Userregisteration from register.js to blockchainSdk
+[32m[2017-06-27 19:31:38.732] [INFO] console - [39mcalling SDK for registration
+[34m[2017-06-27 19:31:38.732] [TRACE] blockchain_sdk - [39mUserRegisteration : entry 
+[34m[2017-06-27 19:31:38.732] [TRACE] blockchain_sdk - [39mUserRegisteration : params - {"user":"risabh.s","UserDetails":{"id":"58631","name":"risabh","email":"risabh@rpqb.com","phone":"12344567890","pan":"pan12345","aadhar":"123423513256","usertype":"lender","upi":"upi@1324231","passpin":"123456"}} 
+[34m[2017-06-27 19:31:38.733] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 19:31:38.733] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["58631","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-06-27 19:31:39.479] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["58631","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]}
+[32m[2017-06-27 19:31:39.480] [INFO] blockchain_sdk - [39mUserRegisteration : Successfully registered user - EventInvokeSubmitted { uuid: '916fe79a-feb8-406e-9419-960597dcd70d' }
+[32m[2017-06-27 19:31:43.743] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 916fe79a-feb8-406e-9419-960597dcd70d complete' }
+[32m[2017-06-27 19:31:57.622] [INFO] console - [39mdata in id:76360
+[32m[2017-06-27 19:31:57.622] [INFO] console - [39mdata in name:risabh
+[32m[2017-06-27 19:31:57.622] [INFO] console - [39mdata in email:risabh@rpqb.com
+[32m[2017-06-27 19:31:57.622] [INFO] console - [39mdata in phone:12344567890
+[32m[2017-06-27 19:31:57.623] [INFO] console - [39mdata in pan:pan12345
+[32m[2017-06-27 19:31:57.623] [INFO] console - [39mdata in aadhar:123423513256
+[32m[2017-06-27 19:31:57.623] [INFO] console - [39mdata in usertype:lender
+[32m[2017-06-27 19:31:57.623] [INFO] console - [39mdata in upi:upi@1324231
+[32m[2017-06-27 19:31:57.623] [INFO] console - [39mdata in passpin:123456
+[32m[2017-06-27 19:31:57.624] [INFO] console - [39mregister object[object Object]
+[32m[2017-06-27 19:31:57.624] [INFO] console - [39mENTERING THE Userregisteration from register.js to blockchainSdk
+[32m[2017-06-27 19:31:57.624] [INFO] console - [39mcalling SDK for registration
+[34m[2017-06-27 19:31:57.624] [TRACE] blockchain_sdk - [39mUserRegisteration : entry 
+[34m[2017-06-27 19:31:57.624] [TRACE] blockchain_sdk - [39mUserRegisteration : params - {"user":"risabh.s","UserDetails":{"id":"76360","name":"risabh","email":"risabh@rpqb.com","phone":"12344567890","pan":"pan12345","aadhar":"123423513256","usertype":"lender","upi":"upi@1324231","passpin":"123456"}} 
+[34m[2017-06-27 19:31:57.625] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 19:31:57.625] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["76360","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-06-27 19:31:58.177] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["76360","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]}
+[32m[2017-06-27 19:31:58.178] [INFO] blockchain_sdk - [39mUserRegisteration : Successfully registered user - EventInvokeSubmitted { uuid: '564feee2-a5c0-4b11-a523-75fa1428f951' }
+[32m[2017-06-27 19:32:02.632] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 564feee2-a5c0-4b11-a523-75fa1428f951 complete' }
+[32m[2017-06-27 20:13:38.904] [INFO] console - [39mdata in id:64457
+[32m[2017-06-27 20:13:38.905] [INFO] console - [39mENTERING THE CORE MODULE
+[32m[2017-06-27 20:13:38.905] [INFO] console - [39mcalling SDK for create campaign
+[34m[2017-06-27 20:13:38.906] [TRACE] blockchain_sdk - [39mcreateCampaign : entry 
+[34m[2017-06-27 20:13:38.906] [TRACE] blockchain_sdk - [39mcreateCampaign : params - {"user":"risabh.s","CampaignDetails":{"status":"active","campaign_id":"64457","user_id":"r@r.com","campaign_title":"save me","campaign_discription":"short discription","loan_amt":"100000","interest_rate":"7.8","term":"60"}} 
+[34m[2017-06-27 20:13:38.907] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 20:13:38.907] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"CreateCampaign","args":["active","64457","r@r.com","save me","short discription","100000","7.8","60"]},"user":"risabh.s","retryCounter":0} 
+[31m[2017-06-27 20:13:39.713] [ERROR] blockchain_sdk - [39mdoInvoke : Could not perform invoke  - EventTransactionError {  error:    { Error: {"created":"@1498574619.711807847","description":"Secure read failed","file":"../src/core/lib/security/transport/secure_endpoint.c","file_line":157,"grpc_status":14,"referenced_errors":[{"created":"@1498574619.711795557","description":"OS Error","errno":104,"file":"../src/core/lib/iomgr/tcp_posix.c","file_line":229,"os_error":"Connection reset by peer","syscall":"recvmsg"}]}       at /home/risabh/nodeWorkspace/p2plending/p2pnode/node_modules/grpc/src/node/src/client.js:417:17 code: 14, metadata: [Object] },  msg: 'Error: {"created":"@1498574619.711807847","description":"Secure read failed","file":"../src/core/lib/security/transport/secure_endpoint.c","file_line":157,"grpc_status":14,"referenced_errors":[{"created":"@1498574619.711795557","description":"OS Error","errno":104,"file":"../src/core/lib/iomgr/tcp_posix.c","file_line":229,"os_error":"Connection reset by peer","syscall":"recvmsg"}]}' }
+[31m[2017-06-27 20:13:41.717] [ERROR] blockchain_sdk - [39mrecursiveInvoke : Invoke Retry 0 - {"statusCode":500,"body":"Could not perform invoke "}
+[34m[2017-06-27 20:13:41.717] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 20:13:41.718] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"CreateCampaign","args":["active","64457","r@r.com","save me","short discription","100000","7.8","60"]},"user":"risabh.s","retryCounter":1} 
+[32m[2017-06-27 20:13:43.031] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"CreateCampaign","args":["active","64457","r@r.com","save me","short discription","100000","7.8","60"]}
+[32m[2017-06-27 20:13:43.032] [INFO] blockchain_sdk - [39mCreateCampaign : Successfully created campaign - EventInvokeSubmitted { uuid: 'f3adca1b-9dc6-4128-9b57-dd750cf6e6cf' }
+[32m[2017-06-27 20:13:43.915] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx ceed8500-fdf7-4d32-bc4b-ac72271a294e complete' }
+[32m[2017-06-27 20:13:46.726] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx f3adca1b-9dc6-4128-9b57-dd750cf6e6cf complete' }
+[32m[2017-06-27 20:32:51.653] [INFO] BlockchainSampleClient - [39m
+[32m[2017-06-27 20:32:51.655] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-06-27 20:32:51.656] [INFO] BlockchainSampleClient - [39m>>> BlockchainSampleClient env local, started Tue Jun 27 2017 20:32:51 GMT+0530 (IST) <<<
+[32m[2017-06-27 20:32:51.656] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-06-27 20:32:51.657] [INFO] BlockchainSampleClient - [39mNode started via(process.argv): /usr/bin/nodejs,/home/risabh/nodeWorkspace/p2plending/p2pnode/app.js
+[32m[2017-06-27 20:32:51.657] [INFO] BlockchainSampleClient - [39mNode version: v6.10.3
+[32m[2017-06-27 20:32:51.657] [INFO] BlockchainSampleClient - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.10.3","v8":"5.1.281.101","uv":"1.9.1","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"56.1","modules":"48","openssl":"1.0.2k"}
+[32m[2017-06-27 20:32:51.657] [INFO] BlockchainSampleClient - [39m
+[32m[2017-06-27 20:32:51.658] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-06-27 20:32:51.658] [TRACE] app.js - [39msetup : entry
+[34m[2017-06-27 20:32:51.659] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-06-27 20:32:51.659] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix","password":"82ecbcc036adcc89fdd43464e6cb51f5aa276d5a2eb74a439e2a53bfe77b3704","host":"9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix.cloudant.com","port":443,"url":"https://9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix:82ecbcc036adcc89fdd43464e6cb51f5aa276d5a2eb74a439e2a53bfe77b3704@9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix.cloudant.com"}} 
+[34m[2017-06-27 20:32:51.666] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-06-27 20:32:51.666] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-06-27 20:32:51.666] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-06-27 20:32:51.666] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-06-27 20:32:52.502] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-06-27 20:32:52.511] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-06-27 20:32:52.512] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-06-27 20:32:52.513] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-06-27 20:32:52.514] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-06-27 20:32:52.520] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-06-27 20:32:52.521] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-06-27 20:32:52.606] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-06-27 20:32:52.617] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-06-27 20:32:52.617] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-06-27 20:32:52.821] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-06-27 20:32:52.832] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-06-27 20:32:52.833] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-06-27 20:32:52.833] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-06-27 20:32:52.835] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-06-27 20:32:52.836] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-06-27 20:32:53.013] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-06-27 20:32:53.026] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-06-27 20:32:53.027] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-06-27 20:32:53.031] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-06-27 20:32:53.031] [INFO] console - [39mserver is running on3001
+[32m[2017-06-27 20:33:04.369] [INFO] console - [39m{ user: 'risabh.s', getcusers: 'getcusers' } 'data in params for query method'
+[34m[2017-06-27 20:33:04.371] [TRACE] blockchain_sdk - [39mfetch campaign details : entry 
+[34m[2017-06-27 20:33:04.371] [TRACE] blockchain_sdk - [39mfetch campaign details : params - {"user":"risabh.s","getcusers":"getcusers"} 
+[34m[2017-06-27 20:33:04.372] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-06-27 20:33:04.373] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"readuser","args":["getcusers"]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-06-27 20:33:10.473] [INFO] blockchain_sdk - [39mdoQuery : data in data.result  - <Buffer 7b 22 63 61 6d 70 61 69 67 6e 6c 69 73 74 22 3a 5b 7b 22 73 74 61 74 75 73 22 3a 22 61 63 74 69 76 65 22 2c 22 69 64 22 3a 34 32 33 32 2c 22 75 73 65 ... >
+[32m[2017-06-27 20:33:10.480] [INFO] blockchain_sdk - [39mdoQuery : data in buffer.tostring  - '{"campaignlist":[{"status":"active","id":4232,"userid":"r@r.com","title":"save me","description":"short discription","loanamount":100000,"interest":7.800000190734863,"noOfTerms":60,"bidlist":null,"bidinfo":{"id":0,"bidcreationtime":0,"campaignid":0,"userid":"","quote":0},"notermsremaining":0},{"status":"active","id":4232,"userid":"r@r.com","title":"save me","description":"short discription","loanamount":100000,"interest":7.800000190734863,"noOfTerms":60,"bidlist":null,"bidinfo":{"id":0,"bidcreationtime":0,"campaignid":0,"userid":"","quote":0},"notermsremaining":0},{"status":"active","id":4232,"userid":"r@r.com","title":"save me","description":"short discription","loanamount":100000,"interest":7.800000190734863,"noOfTerms":60,"bidlist":null,"bidinfo":{"id":0,"bidcreationtime":0,"campaignid":0,"userid":"","quote":0},"notermsremaining":0},{"status":"active","id":4232,"userid":"r@r.com","title":"save me","description":"short discription","loanamount":100000,"interest":7.800000190734863,"noOfTerms":60,"bidlist":null,"bidinfo":{"id":0,"bidcreationtime":0,"campaignid":0,"userid":"","quote":0},"notermsremaining":0},{"status":"active","id":57402,"userid":"r@r.com","title":"save me","description":"short discription","loanamount":100000,"interest":7.800000190734863,"noOfTerms":60,"bidlist":null,"bidinfo":{"id":0,"bidcreationtime":0,"campaignid":0,"userid":"","quote":0},"notermsremaining":0},{"status":"active","id":54862,"userid":"r@r.com","title":"save me","description":"short discription","loanamount":100000,"interest":7.800000190734863,"noOfTerms":60,"bidlist":null,"bidinfo":{"id":0,"bidcreationtime":0,"campaignid":0,"userid":"","quote":0},"notermsremaining":0},{"status":"active","id":71144,"userid":"r@r123.com","title":"axe effect","description":"short discription","loanamount":1000,"interest":7,"noOfTerms":60,"bidlist":null,"bidinfo":{"id":0,"bidcreationtime":0,"campaignid":0,"userid":"","quote":0},"notermsremaining":0},{"status":"active","id":6353,"userid":"r@r.com","title":"save me","description":"short discription","loanamount":100000,"interest":7.800000190734863,"noOfTerms":60,"bidlist":null,"bidinfo":{"id":0,"bidcreationtime":0,"campaignid":0,"userid":"","quote":0},"notermsremaining":0},{"status":"active","id":64457,"userid":"r@r.com","title":"save me","description":"short discription","loanamount":100000,"interest":7.800000190734863,"noOfTerms":60,"bidlist":null,"bidinfo":{"id":0,"bidcreationtime":0,"campaignid":0,"userid":"","quote":0},"notermsremaining":0}]}'
+[32m[2017-06-27 20:33:10.481] [INFO] blockchain_sdk - [39mfetched campaign details : Successfully fetched login details - {"campaignlist":[{"status":"active","id":4232,"userid":"r@r.com","title":"save me","description":"short discription","loanamount":100000,"interest":7.800000190734863,"noOfTerms":60,"bidlist":null,"bidinfo":{"id":0,"bidcreationtime":0,"campaignid":0,"userid":"","quote":0},"notermsremaining":0},{"status":"active","id":4232,"userid":"r@r.com","title":"save me","description":"short discription","loanamount":100000,"interest":7.800000190734863,"noOfTerms":60,"bidlist":null,"bidinfo":{"id":0,"bidcreationtime":0,"campaignid":0,"userid":"","quote":0},"notermsremaining":0},{"status":"active","id":4232,"userid":"r@r.com","title":"save me","description":"short discription","loanamount":100000,"interest":7.800000190734863,"noOfTerms":60,"bidlist":null,"bidinfo":{"id":0,"bidcreationtime":0,"campaignid":0,"userid":"","quote":0},"notermsremaining":0},{"status":"active","id":4232,"userid":"r@r.com","title":"save me","description":"short discription","loanamount":100000,"interest":7.800000190734863,"noOfTerms":60,"bidlist":null,"bidinfo":{"id":0,"bidcreationtime":0,"campaignid":0,"userid":"","quote":0},"notermsremaining":0},{"status":"active","id":57402,"userid":"r@r.com","title":"save me","description":"short discription","loanamount":100000,"interest":7.800000190734863,"noOfTerms":60,"bidlist":null,"bidinfo":{"id":0,"bidcreationtime":0,"campaignid":0,"userid":"","quote":0},"notermsremaining":0},{"status":"active","id":54862,"userid":"r@r.com","title":"save me","description":"short discription","loanamount":100000,"interest":7.800000190734863,"noOfTerms":60,"bidlist":null,"bidinfo":{"id":0,"bidcreationtime":0,"campaignid":0,"userid":"","quote":0},"notermsremaining":0},{"status":"active","id":71144,"userid":"r@r123.com","title":"axe effect","description":"short discription","loanamount":1000,"interest":7,"noOfTerms":60,"bidlist":null,"bidinfo":{"id":0,"bidcreationtime":0,"campaignid":0,"userid":"","quote":0},"notermsremaining":0},{"status":"active","id":6353,"userid":"r@r.com","title":"save me","description":"short discription","loanamount":100000,"interest":7.800000190734863,"noOfTerms":60,"bidlist":null,"bidinfo":{"id":0,"bidcreationtime":0,"campaignid":0,"userid":"","quote":0},"notermsremaining":0},{"status":"active","id":64457,"userid":"r@r.com","title":"save me","description":"short discription","loanamount":100000,"interest":7.800000190734863,"noOfTerms":60,"bidlist":null,"bidinfo":{"id":0,"bidcreationtime":0,"campaignid":0,"userid":"","quote":0},"notermsremaining":0}]}
+[32m[2017-06-27 21:25:06.111] [INFO] console - [39mdata in id:9946
+[32m[2017-06-27 21:25:06.114] [INFO] console - [39mdata in name:risabh
+[32m[2017-06-27 21:25:06.114] [INFO] console - [39mdata in email:risabh@rpqb.com
+[32m[2017-06-27 21:25:06.115] [INFO] console - [39mdata in phone:12344567890
+[32m[2017-06-27 21:25:06.115] [INFO] console - [39mdata in pan:pan12345
+[32m[2017-06-27 21:25:06.115] [INFO] console - [39mdata in aadhar:123423513256
+[32m[2017-06-27 21:25:06.115] [INFO] console - [39mdata in usertype:lender
+[32m[2017-06-27 21:25:06.115] [INFO] console - [39mdata in upi:upi@1324231
+[32m[2017-06-27 21:25:06.116] [INFO] console - [39mdata in passpin:123456
+[32m[2017-06-27 21:25:06.116] [INFO] console - [39mregister object[object Object]
+[32m[2017-06-27 21:25:06.116] [INFO] console - [39mENTERING THE Userregisteration from register.js to blockchainSdk
+[32m[2017-06-27 21:25:06.117] [INFO] console - [39mcalling SDK for registration
+[34m[2017-06-27 21:25:06.117] [TRACE] blockchain_sdk - [39mUserRegisteration : entry 
+[34m[2017-06-27 21:25:06.118] [TRACE] blockchain_sdk - [39mUserRegisteration : params - {"user":"risabh.s","UserDetails":{"id":"9946","name":"risabh","email":"risabh@rpqb.com","phone":"12344567890","pan":"pan12345","aadhar":"123423513256","usertype":"lender","upi":"upi@1324231","passpin":"123456"}} 
+[34m[2017-06-27 21:25:06.119] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 21:25:06.120] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["9946","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":0} 
+[31m[2017-06-27 21:25:06.714] [ERROR] blockchain_sdk - [39mdoInvoke : Could not perform invoke  - EventTransactionError {  error:    { Error: {"created":"@1498578906.708009129","description":"Secure read failed","file":"../src/core/lib/security/transport/secure_endpoint.c","file_line":157,"grpc_status":14,"referenced_errors":[{"created":"@1498578906.707992377","description":"OS Error","errno":104,"file":"../src/core/lib/iomgr/tcp_posix.c","file_line":229,"os_error":"Connection reset by peer","syscall":"recvmsg"}]}       at /home/risabh/nodeWorkspace/p2plending/p2pnode/node_modules/grpc/src/node/src/client.js:417:17 code: 14, metadata: [Object] },  msg: 'Error: {"created":"@1498578906.708009129","description":"Secure read failed","file":"../src/core/lib/security/transport/secure_endpoint.c","file_line":157,"grpc_status":14,"referenced_errors":[{"created":"@1498578906.707992377","description":"OS Error","errno":104,"file":"../src/core/lib/iomgr/tcp_posix.c","file_line":229,"os_error":"Connection reset by peer","syscall":"recvmsg"}]}' }
+[31m[2017-06-27 21:25:08.717] [ERROR] blockchain_sdk - [39mrecursiveInvoke : Invoke Retry 0 - {"statusCode":500,"body":"Could not perform invoke "}
+[34m[2017-06-27 21:25:08.717] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 21:25:08.717] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["9946","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":1} 
+[32m[2017-06-27 21:25:10.159] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["9946","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]}
+[32m[2017-06-27 21:25:10.165] [INFO] blockchain_sdk - [39mUserRegisteration : Successfully registered user - EventInvokeSubmitted { uuid: '2d817e5b-eee8-4c23-8eab-13cb872dda1c' }
+[32m[2017-06-27 21:25:11.148] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx bc02a5a5-9953-4c98-9630-094654f9bda1 complete' }
+[32m[2017-06-27 21:25:13.735] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 2d817e5b-eee8-4c23-8eab-13cb872dda1c complete' }
+[32m[2017-06-27 22:16:48.470] [INFO] console - [39mdata in id:31376
+[32m[2017-06-27 22:16:48.471] [INFO] console - [39mdata in name:wallet digital
+[32m[2017-06-27 22:16:48.471] [INFO] console - [39mdata in email:umashankar@rapid.com
+[32m[2017-06-27 22:16:48.471] [INFO] console - [39mdata in phone:2341234122
+[32m[2017-06-27 22:16:48.471] [INFO] console - [39mdata in pan:sde123fwsdds
+[32m[2017-06-27 22:16:48.472] [INFO] console - [39mdata in aadhar:
+[32m[2017-06-27 22:16:48.473] [INFO] console - [39mdata in usertype:Lender
+[32m[2017-06-27 22:16:48.473] [INFO] console - [39mdata in upi:9176961985@rbl
+[32m[2017-06-27 22:16:48.474] [INFO] console - [39mdata in passpin:Rest@123
+[32m[2017-06-27 22:16:55.334] [INFO] console - [39mdata in id:64273
+[32m[2017-06-27 22:16:55.334] [INFO] console - [39mdata in name:risabh
+[32m[2017-06-27 22:16:55.334] [INFO] console - [39mdata in email:risabh@rpqb.com
+[32m[2017-06-27 22:16:55.335] [INFO] console - [39mdata in phone:12344567890
+[32m[2017-06-27 22:16:55.335] [INFO] console - [39mdata in pan:pan12345
+[32m[2017-06-27 22:16:55.335] [INFO] console - [39mdata in aadhar:123423513256
+[32m[2017-06-27 22:16:55.335] [INFO] console - [39mdata in usertype:lender
+[32m[2017-06-27 22:16:55.336] [INFO] console - [39mdata in upi:upi@1324231
+[32m[2017-06-27 22:16:55.336] [INFO] console - [39mdata in passpin:123456
+[32m[2017-06-27 22:16:55.337] [INFO] console - [39mregister object[object Object]
+[32m[2017-06-27 22:16:55.338] [INFO] console - [39mENTERING THE Userregisteration from register.js to blockchainSdk
+[32m[2017-06-27 22:16:55.338] [INFO] console - [39mcalling SDK for registration
+[34m[2017-06-27 22:16:55.338] [TRACE] blockchain_sdk - [39mUserRegisteration : entry 
+[34m[2017-06-27 22:16:55.339] [TRACE] blockchain_sdk - [39mUserRegisteration : params - {"user":"risabh.s","UserDetails":{"id":"64273","name":"risabh","email":"risabh@rpqb.com","phone":"12344567890","pan":"pan12345","aadhar":"123423513256","usertype":"lender","upi":"upi@1324231","passpin":"123456"}} 
+[34m[2017-06-27 22:16:55.340] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 22:16:55.340] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["64273","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":0} 
+[31m[2017-06-27 22:16:55.879] [ERROR] blockchain_sdk - [39mdoInvoke : Could not perform invoke  - EventTransactionError {  error:    { Error: {"created":"@1498582015.877104220","description":"Secure read failed","file":"../src/core/lib/security/transport/secure_endpoint.c","file_line":157,"grpc_status":14,"referenced_errors":[{"created":"@1498582015.877087040","description":"OS Error","errno":104,"file":"../src/core/lib/iomgr/tcp_posix.c","file_line":229,"os_error":"Connection reset by peer","syscall":"recvmsg"}]}       at /home/risabh/nodeWorkspace/p2plending/p2pnode/node_modules/grpc/src/node/src/client.js:417:17 code: 14, metadata: [Object] },  msg: 'Error: {"created":"@1498582015.877104220","description":"Secure read failed","file":"../src/core/lib/security/transport/secure_endpoint.c","file_line":157,"grpc_status":14,"referenced_errors":[{"created":"@1498582015.877087040","description":"OS Error","errno":104,"file":"../src/core/lib/iomgr/tcp_posix.c","file_line":229,"os_error":"Connection reset by peer","syscall":"recvmsg"}]}' }
+[31m[2017-06-27 22:16:57.881] [ERROR] blockchain_sdk - [39mrecursiveInvoke : Invoke Retry 0 - {"statusCode":500,"body":"Could not perform invoke "}
+[34m[2017-06-27 22:16:57.881] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 22:16:57.881] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["64273","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":1} 
+[32m[2017-06-27 22:16:59.402] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["64273","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]}
+[32m[2017-06-27 22:16:59.404] [INFO] blockchain_sdk - [39mUserRegisteration : Successfully registered user - EventInvokeSubmitted { uuid: 'c78ca271-6352-4eb4-82b8-966bdef06198' }
+[32m[2017-06-27 22:17:00.349] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 22a19522-4d1e-4558-930b-b57c605756c5 complete' }
+[32m[2017-06-27 22:17:02.895] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx c78ca271-6352-4eb4-82b8-966bdef06198 complete' }
+[32m[2017-06-27 22:18:27.389] [INFO] console - [39mdata in id:20875
+[32m[2017-06-27 22:18:27.389] [INFO] console - [39mdata in name:risabh
+[32m[2017-06-27 22:18:27.389] [INFO] console - [39mdata in email:risabh@rpqb.com
+[32m[2017-06-27 22:18:27.390] [INFO] console - [39mdata in phone:12344567890
+[32m[2017-06-27 22:18:27.390] [INFO] console - [39mdata in pan:pan12345
+[32m[2017-06-27 22:18:27.390] [INFO] console - [39mdata in aadhar:123423513256
+[32m[2017-06-27 22:18:27.390] [INFO] console - [39mdata in usertype:lender
+[32m[2017-06-27 22:18:27.390] [INFO] console - [39mdata in upi:upi@1324231
+[32m[2017-06-27 22:18:27.391] [INFO] console - [39mdata in passpin:123456
+[32m[2017-06-27 22:18:27.391] [INFO] console - [39mregister object[object Object]
+[32m[2017-06-27 22:18:27.392] [INFO] console - [39mENTERING THE Userregisteration from register.js to blockchainSdk
+[32m[2017-06-27 22:18:27.392] [INFO] console - [39mcalling SDK for registration
+[34m[2017-06-27 22:18:27.393] [TRACE] blockchain_sdk - [39mUserRegisteration : entry 
+[34m[2017-06-27 22:18:27.393] [TRACE] blockchain_sdk - [39mUserRegisteration : params - {"user":"risabh.s","UserDetails":{"id":"20875","name":"risabh","email":"risabh@rpqb.com","phone":"12344567890","pan":"pan12345","aadhar":"123423513256","usertype":"lender","upi":"upi@1324231","passpin":"123456"}} 
+[34m[2017-06-27 22:18:27.393] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 22:18:27.394] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["20875","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-06-27 22:18:27.943] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["20875","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]}
+[32m[2017-06-27 22:18:27.944] [INFO] blockchain_sdk - [39mUserRegisteration : Successfully registered user - EventInvokeSubmitted { uuid: '6c5809e3-1eb0-4cf6-b720-2a7f12ef9f4e' }
+[32m[2017-06-27 22:18:32.409] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 6c5809e3-1eb0-4cf6-b720-2a7f12ef9f4e complete' }
+[32m[2017-06-27 22:19:28.834] [INFO] console - [39mdata in id:94111
+[32m[2017-06-27 22:19:28.835] [INFO] console - [39mdata in name:risabh
+[32m[2017-06-27 22:19:28.836] [INFO] console - [39mdata in email:risabh@rpqb.com
+[32m[2017-06-27 22:19:28.838] [INFO] console - [39mdata in phone:12344567890
+[32m[2017-06-27 22:19:28.839] [INFO] console - [39mdata in pan:pan12345
+[32m[2017-06-27 22:19:28.839] [INFO] console - [39mdata in aadhar:123423513256
+[32m[2017-06-27 22:19:28.840] [INFO] console - [39mdata in usertype:lender
+[32m[2017-06-27 22:19:28.840] [INFO] console - [39mdata in upi:upi@1324231
+[32m[2017-06-27 22:19:28.840] [INFO] console - [39mdata in passpin:123456
+[32m[2017-06-27 22:19:28.840] [INFO] console - [39mregister object[object Object]
+[32m[2017-06-27 22:19:28.843] [INFO] console - [39mENTERING THE Userregisteration from register.js to blockchainSdk
+[32m[2017-06-27 22:19:28.845] [INFO] console - [39mcalling SDK for registration
+[34m[2017-06-27 22:19:28.845] [TRACE] blockchain_sdk - [39mUserRegisteration : entry 
+[34m[2017-06-27 22:19:28.845] [TRACE] blockchain_sdk - [39mUserRegisteration : params - {"user":"risabh.s","UserDetails":{"id":"94111","name":"risabh","email":"risabh@rpqb.com","phone":"12344567890","pan":"pan12345","aadhar":"123423513256","usertype":"lender","upi":"upi@1324231","passpin":"123456"}} 
+[34m[2017-06-27 22:19:28.845] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 22:19:28.848] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["94111","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-06-27 22:19:29.403] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["94111","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]}
+[32m[2017-06-27 22:19:29.406] [INFO] blockchain_sdk - [39mUserRegisteration : Successfully registered user - EventInvokeSubmitted { uuid: '1a6ed2c2-bfd0-47d9-be6c-b2f4675d2c59' }
+[32m[2017-06-27 22:19:33.866] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 1a6ed2c2-bfd0-47d9-be6c-b2f4675d2c59 complete' }
+[32m[2017-06-27 22:21:17.165] [INFO] console - [39mdata in id:51712
+[32m[2017-06-27 22:21:17.165] [INFO] console - [39mdata in name:risabh
+[32m[2017-06-27 22:21:17.166] [INFO] console - [39mdata in email:risabh@rpqb.com
+[32m[2017-06-27 22:21:17.166] [INFO] console - [39mdata in phone:12344567890
+[32m[2017-06-27 22:21:17.166] [INFO] console - [39mdata in pan:pan12345
+[32m[2017-06-27 22:21:17.167] [INFO] console - [39mdata in aadhar:123423513256
+[32m[2017-06-27 22:21:17.167] [INFO] console - [39mdata in usertype:lender
+[32m[2017-06-27 22:21:17.167] [INFO] console - [39mdata in upi:upi@1324231
+[32m[2017-06-27 22:21:17.167] [INFO] console - [39mdata in passpin:123456
+[32m[2017-06-27 22:21:17.167] [INFO] console - [39mregister object[object Object]
+[32m[2017-06-27 22:21:17.167] [INFO] console - [39mENTERING THE Userregisteration from register.js to blockchainSdk
+[32m[2017-06-27 22:21:17.167] [INFO] console - [39mcalling SDK for registration
+[34m[2017-06-27 22:21:17.167] [TRACE] blockchain_sdk - [39mUserRegisteration : entry 
+[34m[2017-06-27 22:21:17.167] [TRACE] blockchain_sdk - [39mUserRegisteration : params - {"user":"risabh.s","UserDetails":{"id":"51712","name":"risabh","email":"risabh@rpqb.com","phone":"12344567890","pan":"pan12345","aadhar":"123423513256","usertype":"lender","upi":"upi@1324231","passpin":"123456"}} 
+[34m[2017-06-27 22:21:17.168] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-06-27 22:21:17.168] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["51712","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-06-27 22:21:17.763] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"registerUser","args":["51712","risabh","risabh@rpqb.com","12344567890","pan12345","123423513256","lender","upi@1324231","123456"]}
+[32m[2017-06-27 22:21:17.764] [INFO] blockchain_sdk - [39mUserRegisteration : Successfully registered user - EventInvokeSubmitted { uuid: 'c01d8c88-112b-4ae8-b87b-5bdd78e12732' }
+[32m[2017-06-27 22:21:22.179] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx c01d8c88-112b-4ae8-b87b-5bdd78e12732 complete' }
