@@ -406,13 +406,16 @@ function doQuery1(params){
                 });
 
                 tx.on('complete', function(data) {
-                    try{
+                  
                         logHelper.logMessage(logger, 'doQuery', 'data in data.result ',data.result);
                         var buffer = new Buffer(data.result);
                          logHelper.logMessage(logger, 'doQuery', 'data in buffer.tostring ',buffer.toString());
-                        var jsonResp = JSON.parse(buffer.toString());
+                        var jsonResp = (buffer.toString());
+                         console.log(jsonResp.length);
+                          try{  
+                              if( jsonResp.length > 1){
                         return resolve({statusCode: constants.SUCCESS, body: jsonResp});
-                    }
+                      }}
                     catch(err){
                         logHelper.logError(logger,'doQuery','Could not parse query response',err);
                         return reject({statusCode: constants.INTERNAL_SERVER_ERROR, body: 'Could not parse query response ' });
@@ -477,7 +480,7 @@ function doQuery(params){
                         logHelper.logMessage(logger, 'doQuery', 'data in data.result ',data.result);
                         var buffer = new Buffer(data.result);
                          logHelper.logMessage(logger, 'doQuery', 'data in buffer.tostring ',buffer.toString());
-                        var jsonResp = (buffer.toString());
+                        var jsonResp = JSON.parse(buffer.toString());
                         return resolve({statusCode: constants.SUCCESS, body: jsonResp});
                     }
                     catch(err){

@@ -73,8 +73,8 @@ module.exports = router => {
 
 			.then(result => {
 			
-				return res.json({ message:"login success",email:result.resp.emailFromsdk,status:resp.status});
-
+				return res.json({status:result.emailid.statusCode,token:result.token,email:result.emailid.body});
+                   //  return res.json({result});
 			})
 
 			.catch(err => res.status(err.status).json({ message: err.message }));

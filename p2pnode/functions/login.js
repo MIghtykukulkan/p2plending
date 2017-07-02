@@ -16,19 +16,16 @@ exports.loginUser = (email, passpin) => {
 		
 
                  bcSdk.User_login({user:user, ui_login:ui_login})
-				   /*
-						
-			console.log("ENTERING THE login MODULE");
-		     
-*/
-			.then(function(emailFromsdk)
+				   
+
+	.then((emailid)=>
 			{
 				 var token = "";
                  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
                     for (var i = 0; i < 25; i++)
                    token += possible.charAt(Math.floor(Math.random() * possible.length));
-				  return resolve({ status: 201,token:token,emailFromsdk:emailFromsdk,message:"sucessfully logged in"})
+				  return resolve({token:token,message:"sucessfully logged in",emailid:emailid})
 		})
 
 			.catch(err => {
@@ -43,4 +40,5 @@ exports.loginUser = (email, passpin) => {
 	}
 					})
 	
-	})};
+	})
+};
