@@ -118,8 +118,10 @@ function User_login(params) {
             recursiveQuery1({requestSpec: reqSpec, user: user})
             .then(function(resp){
                 logHelper.logMessage(logger, 'get login details', 'Successfully fetched login details', resp.body);
+              
                 return resolve({statusCode: constants.SUCCESS, body: resp.body});
             })
+        
             .catch(function(err){   
                 logHelper.logError(logger, 'user login details', 'Could not fetch user details', err);
                 return reject({statusCode: constants.INTERNAL_SERVER_ERROR, body: 'Could not fetch user details' });
@@ -371,8 +373,7 @@ function getRequestSpec(params){
 /**
 Performs query operation on blockchain
 **/
-function doQuery1(params){
-    return new Promise(function(resolve, reject){
+function doQuery1(params){return new Promise(function(resolve, reject){
        
         try{
             logHelper.logEntryAndInput(logger, 'doQuery', params);
@@ -406,16 +407,13 @@ function doQuery1(params){
                 });
 
                 tx.on('complete', function(data) {
-                  
+                    try{
                         logHelper.logMessage(logger, 'doQuery', 'data in data.result ',data.result);
                         var buffer = new Buffer(data.result);
                          logHelper.logMessage(logger, 'doQuery', 'data in buffer.tostring ',buffer.toString());
                         var jsonResp = (buffer.toString());
-                         console.log(jsonResp.length);
-                          try{  
-                              if( jsonResp.length > 1){
                         return resolve({statusCode: constants.SUCCESS, body: jsonResp});
-                      }}
+                    }
                     catch(err){
                         logHelper.logError(logger,'doQuery','Could not parse query response',err);
                         return reject({statusCode: constants.INTERNAL_SERVER_ERROR, body: 'Could not parse query response ' });
@@ -439,6 +437,7 @@ function doQuery1(params){
                 return reject({statusCode: constants.INTERNAL_SERVER_ERROR, body: 'Could not perform query ' });
         }
     });
+  
   
 }
 function doQuery(params){

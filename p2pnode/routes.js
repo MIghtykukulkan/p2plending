@@ -70,16 +70,20 @@ module.exports = router => {
 		} else {
 
 			login.loginUser(email,passpin)
-
+		
+                          
 			.then(result => {
-			
+				if(result.emailid.body.length>1){
 				return res.json({status:result.emailid.statusCode,token:result.token,email:result.emailid.body});
-                   //  return res.json({result});
-			})
+                   
+					}
+				else{
+					return res.json({status:409,message:"inavlid user credentials"})
+				}})
 
 			.catch(err => res.status(err.status).json({ message: err.message }));
-		}
-	});
+		}}
+	);
 
 	router.post('/createCampaign', (req, res) => {
           const  status = req.body.status;

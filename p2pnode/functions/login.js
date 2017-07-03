@@ -22,10 +22,15 @@ exports.loginUser = (email, passpin) => {
 			{
 				 var token = "";
                  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+				
 
                     for (var i = 0; i < 25; i++)
                    token += possible.charAt(Math.floor(Math.random() * possible.length));
+				  
 				  return resolve({token:token,message:"sucessfully logged in",emailid:emailid})
+		
+			
+
 		})
 
 			.catch(err => {
